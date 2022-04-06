@@ -1,10 +1,18 @@
 import './Background.css';
-import { Canvas, useFrame,useThree, useLoader } from '@react-three/fiber'
+import { Canvas, useFrame,extend,useThree, useLoader } from '@react-three/fiber'
 import * as THREE from 'three'
-import React, { useResource,useState, useRef, useMemo,Suspense } from 'react'
+import React, { useEffect,useResource,useState, useRef, useMemo,Suspense } from 'react'
 import { TextureLoader } from "three/src/loaders/TextureLoader";
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { OrbitControls, useGLTF } from '@react-three/drei'
+import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer'
+import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass'
+import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass'
+import {render} from "react-dom"
+import { Plane } from '@react-three/drei';
+
+
+extend({ EffectComposer, RenderPass, UnrealBloomPass })
 
 function Model(props ) {
     const group = useRef()
@@ -39,7 +47,7 @@ function Triangle(props) {
     })
 
     return (
-        <group ref={group} position={props.pos} rotation={[0.693571513,2.04360602,-0.74442306855]} scale={props.scale}  dispose={null}>
+        <group castShadow={true} ref={group} position={props.pos} rotation={[0.693571513,2.04360602,-0.74442306855]} scale={props.scale}  dispose={null}>
         <group position={[0.06, -0.06, 0]} rotation={[-Math.PI / 2, -0.01, 0]} scale={0.13}>
             <group position={[-1, -1, -1]}>
             <mesh geometry={nodes.Object_3.geometry} material={materials['Material.001']} />
@@ -61,9 +69,9 @@ function Triangle1({ ...props }) {
 
     useFrame((state, delta) =>
     {
-      setYRotation(Yrotation+0.01);
-      setXRotation(Xrotation+0.02);
-      setZRotation(Zrotation+0.005); 
+      setYRotation(Yrotation+0.02);
+      setXRotation(Xrotation+0.005);
+      setZRotation(Zrotation+0.001); 
       if(Yrotation > 2*Math.PI) setYRotation(Yrotation -2*Math.PI)
       if(Xrotation > 2*Math.PI) setXRotation(Xrotation -2*Math.PI)
       if(Zrotation > 2*Math.PI) setZRotation(Zrotation -2*Math.PI)
@@ -76,15 +84,75 @@ function Triangle1({ ...props }) {
     </group>
   )
 }
+
+function Triangle2({ ...props }) {
+  const group = useRef()
+  const [Yrotation, setYRotation] = useState(0); 
+
+  const [Xrotation, setXRotation] = useState(0); 
+
+  const [Zrotation, setZRotation] = useState(0); 
+
+    useFrame((state, delta) =>
+    {
+      setYRotation(Yrotation+0.02);
+      setXRotation(Xrotation+0.001);
+      setZRotation(Zrotation+0.001); 
+      if(Yrotation > 2*Math.PI) setYRotation(Yrotation -2*Math.PI)
+      if(Xrotation > 2*Math.PI) setXRotation(Xrotation -2*Math.PI)
+      if(Zrotation > 2*Math.PI) setZRotation(Zrotation -2*Math.PI)
+
+    })
+  const { nodes, materials } = useGLTF('/triangletwo/Triangle1.gltf')
+  return (
+    <group ref={group} rotation={[Xrotation, Yrotation, Zrotation]}{...props} dispose={null}>
+      <mesh geometry={nodes.Cube.geometry} material={materials['Material.005']} />
+    </group>
+  )
+}
+
+function Bloom({ children }) {
+  const { gl, camera, size } = useThree()
+  const ref = useResource(); 
+  //const [scene, setScene] = useState()
+  const composer = useRef()
+  const aspect = useMemo(() => new THREE.Vector2(size.width, size.height), [size])
+  useEffect(() => void ref.current && composer.current.setSize(size.width, size.height), [ref, size])
+  useFrame(() => ref.current && composer.current.render(), 1)
+  return (
+    <>
+      <scene ref={ref}>{children}</scene>
+      <effectComposer ref={composer} args={[gl]}>
+        <renderPass attachArray="passes" scene={ref.current} camera={camera} />
+        <unrealBloomPass attachArray="passes" args={[aspect, 1.5, 1, 0]} />
+      </effectComposer>
+    </>
+  )
+}
 function Background(props) {
     return (
         <div className='BackgroundCanvas'>
-            <Canvas perspective camera={{ zoom: 10, position: [0, 20, 100] }}>
-              <ambientLight intensity={0.2}></ambientLight>
-              <pointLight position={[10, 10, -10]} />
+            <Canvas shadows={true} camera={{ zoom: 10, position: [0, 20, 100] }}>
+              <fog attach={"fog"} args={["white",0,4]}/>
+              <ambientLight intensity={0.1}></ambientLight>
+              <pointLight intensity={0.3} position={[10, 10, -10]} />
+              {/* <Plane 
+              recieveShadow 
+              rotation={[-Math.PI/2,0,0]}
+               position={[0,-20,-60]} 
+               args={[1000,100]}>
+                      <meshStandardMaterial attach={"material"} color={"white"}></meshStandardMaterial>
+                    </Plane> */}
                 <Suspense fallback={null}>
-                    <Triangle1 scale={0.5} position={[0,-8,-60]} />
+                  {/* <pointLight
+                  castShadow 
+                  intensity={10} 
+                  position={[0,0,0]} /> */}
+                      <Triangle1 castShadow scale={0.5} position={[0,-6,-60]} />
+                      <Triangle1 castShadow scale={0.2} position={[0,-6.2,-60]} />
+                      
                     <Model scale={5} pos={[0,-6,-5]} rotation={[0,Math.PI/2,0]} />
+                   
                 </Suspense>
             </Canvas>
         </div>
