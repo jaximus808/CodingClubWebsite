@@ -1,0 +1,45 @@
+.container
+{
+    color:white;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    position:absolute;
+    top:90%
+}
+
+.ClubTitle
+{
+    position: absolute;
+    left:50%;
+    top:25%;
+    transform: translate(-50%, 0);
+    color:#78cce2;
+    font-size: 15vw;
+    width:100%;
+    text-align: center;
+    font-family: 'Teko', sans-serif;
+    background-color: rgba(78, 121, 136, 0.2);
+
+}
+
+.links
+{
+    position: absolute;
+    left:50%;
+    top:80%;
+    transform: translate(-50%, 0);
+    color:#78cce2;
+    font-size: 2.5vw;
+    width:50%;
+    text-align: center;
+    font-family: 'Teko', sans-serif;
+
+    background-color: rgba(78, 121, 136, 0.2);
+  
+}
+.links > a
+{
+    margin-left: 2vw;
+
+    color:#78cce2;
+}

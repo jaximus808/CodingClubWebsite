@@ -69,9 +69,9 @@ function Triangle1({ ...props }) {
 
     useFrame((state, delta) =>
     {
-      setYRotation(Yrotation+0.02);
-      setXRotation(Xrotation+0.005);
-      setZRotation(Zrotation+0.001); 
+      setYRotation(Yrotation+0.05);
+      setXRotation(Xrotation+0.008);
+      setZRotation(Zrotation+0.004); 
       if(Yrotation > 2*Math.PI) setYRotation(Yrotation -2*Math.PI)
       if(Xrotation > 2*Math.PI) setXRotation(Xrotation -2*Math.PI)
       if(Zrotation > 2*Math.PI) setZRotation(Zrotation -2*Math.PI)
@@ -111,31 +111,43 @@ function Triangle2({ ...props }) {
   )
 }
 
-function Bloom({ children }) {
-  const { gl, camera, size } = useThree()
-  const ref = useResource(); 
-  //const [scene, setScene] = useState()
-  const composer = useRef()
-  const aspect = useMemo(() => new THREE.Vector2(size.width, size.height), [size])
-  useEffect(() => void ref.current && composer.current.setSize(size.width, size.height), [ref, size])
-  useFrame(() => ref.current && composer.current.render(), 1)
+function Box(props)
+{
+  const [xPos, setXPos] = useState(props.pos[0]);
+
+  const ref = useRef(); 
+  useFrame((state, delta) =>
+  {
+    setXPos(xPos+0.01);
+  })
+
+  return (
+      <mesh position={[0, -25, -80]} rotation={[0,Math.PI/4,0]} ref={ref} >
+        <boxBufferGeometry args={[1,1,1]} attach="geometry"/>
+        <meshPhongMaterial color={"lightblue"} attach="material"></meshPhongMaterial>
+      </mesh>
+  )
+}
+
+function BlockFunction(props)
+{
+
   return (
     <>
-      <scene ref={ref}>{children}</scene>
-      <effectComposer ref={composer} args={[gl]}>
-        <renderPass attachArray="passes" scene={ref.current} camera={camera} />
-        <unrealBloomPass attachArray="passes" args={[aspect, 1.5, 1, 0]} />
-      </effectComposer>
+      <Box pos={[0, props.z, 0]} />
     </>
   )
 }
+
 function Background(props) {
     return (
         <div className='BackgroundCanvas'>
-            <Canvas shadows={true} camera={{ zoom: 10, position: [0, 20, 100] }}>
-              <fog attach={"fog"} args={["white",0,4]}/>
+            <Canvas style={{position:"fixed"}} shadows={true} camera={{ zoom: 10, position: [0, 20, 100] }}>
+              
               <ambientLight intensity={0.1}></ambientLight>
-              <pointLight intensity={0.3} position={[10, 10, -10]} />
+              <pointLight intensity={0.4} position={[10, 10, -10]} />
+
+              <pointLight intensity={0.4} color="lightblue" position={[-10, 10, 10]} />
               {/* <Plane 
               recieveShadow 
               rotation={[-Math.PI/2,0,0]}
@@ -143,17 +155,16 @@ function Background(props) {
                args={[1000,100]}>
                       <meshStandardMaterial attach={"material"} color={"white"}></meshStandardMaterial>
                     </Plane> */}
+
                 <Suspense fallback={null}>
-                  {/* <pointLight
-                  castShadow 
-                  intensity={10} 
-                  position={[0,0,0]} /> */}
-                      <Triangle1 castShadow scale={0.5} position={[0,-6,-60]} />
-                      <Triangle1 castShadow scale={0.2} position={[0,-6.2,-60]} />
-                      
-                    <Model scale={5} pos={[0,-6,-5]} rotation={[0,Math.PI/2,0]} />
-                   
+
+                <Box pos={[0,0,-10]}/>
+                  <Triangle1 castShadow scale={0.5} position={[0,-8,-60]} />
+                  <Triangle1 castShadow scale={0.2} position={[0,-8.2,-60]} />
+                  {/* <Model scale={9} pos={[0,-8,-5]} rotation={[0,Math.PI/2,0]} />
+                    */}
                 </Suspense>
+
             </Canvas>
         </div>
     )
