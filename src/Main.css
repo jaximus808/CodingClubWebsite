@@ -1,24 +1,16 @@
-.container
-{
-    color:white;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    position:absolute;
-    top:90%
-}
+
 
 .ClubTitle
 {
     position: absolute;
     left:50%;
-    top:25%;
+    top:30%;
     transform: translate(-50%, 0);
-    color:#78cce2;
-    font-size: 15vw;
+    font-size: 9vw;
     width:100%;
     text-align: center;
-    font-family: 'Teko', sans-serif;
-    background-color: rgba(78, 121, 136, 0.2);
+    color:white;
+    font-family: 'Orbitron', sans-serif;
 
 }
 
@@ -28,18 +20,73 @@
     left:50%;
     top:80%;
     transform: translate(-50%, 0);
-    color:#78cce2;
     font-size: 2.5vw;
     width:50%;
     text-align: center;
     font-family: 'Teko', sans-serif;
 
-    background-color: rgba(78, 121, 136, 0.2);
   
 }
 .links > a
 {
     margin-left: 2vw;
+    color:#00b3fe;
+}
 
-    color:#78cce2;
+.container
+{
+    display: grid;
+    justify-content: space-evenly;
+    grid-template-columns:repeat(20,5%);
+    grid-template-rows:repeat(20,10vw);
+    position:absolute;
+    top:100%;
+    width:100%;
+    
+}
+
+
+.doing > img{
+    float: right;
+}
+
+.lang
+{
+    
+    color:black;
+    background-color: white;
+    grid-column-start: 14;
+    grid-column-end:19;
+    grid-row-start: 1;
+    grid-row-end: 5;
+    padding: 1vw;
+    float: right;
+    font-family: 'Teko', sans-serif;
+}
+
+.doing
+{
+    color:black;
+    background-color: white;
+    grid-column-start: 2;
+    grid-column-end:12;
+    grid-row-start: 1;
+    grid-row-end: 5;
+    padding: 1vw;
+    float: right;
+    font-family: 'Teko', sans-serif;
+}
+
+.Socials
+{
+    color:black;
+    background-color: white;
+    grid-column-start: 2;
+    grid-column-end:5;
+    grid-row-start: 6;
+    grid-row-end: 10;
+    padding: 1vw;
+    float: right;
+    font-family: 'Teko', sans-serif;
+    text-align: center;
 }

@@ -145,7 +145,7 @@ function Background(props) {
             <Canvas style={{position:"fixed"}} shadows={true} camera={{ zoom: 10, position: [0, 20, 100] }}>
               
               <ambientLight intensity={0.1}></ambientLight>
-              <pointLight intensity={0.4} position={[10, 10, -10]} />
+              <pointLight intensity={0.4} color="#cc00cc"position={[10, 10, -10]} />
 
               <pointLight intensity={0.4} color="lightblue" position={[-10, 10, 10]} />
               {/* <Plane 
@@ -159,8 +159,8 @@ function Background(props) {
                 <Suspense fallback={null}>
 
                 <Box pos={[0,0,-10]}/>
-                  <Triangle1 castShadow scale={0.5} position={[0,-8,-60]} />
-                  <Triangle1 castShadow scale={0.2} position={[0,-8.2,-60]} />
+                  <Triangle1 castShadow scale={0.5} position={[0,-8.5,-60]} />
+                  <Triangle1 castShadow scale={0.2} position={[0,-8.7,-60]} />
                   {/* <Model scale={9} pos={[0,-8,-5]} rotation={[0,Math.PI/2,0]} />
                     */}
                 </Suspense>
