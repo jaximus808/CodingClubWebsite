@@ -45,14 +45,34 @@ export default function Main(props)
                 </div>
                 <div className='Socials'>
                     <div style={{"fontWeight":"bold", "fontSize":"3vw"} }>Socials</div>
-                    <div style={{"textAlign":"center"}}>
-                        <img src="https://www.freepnglogos.com/uploads/discord-logo-png/discord-logo-logodownload-download-logotipos-1.png"
+                    <div style={{"textAlign":"center", "padding":"0.5vw"}}>
+                        <img src="./icons/discordLogo.png"
                         style={{"width":"6vw","height":"6vw"}}
                         ></img>
                          
                     </div>
                     <a style={{"fontSize":"2vw"}}target="_blank" href='https://discord.gg/nJJ3vR6WQC'>Discord</a>
-                        
+                    <div style={{"textAlign":"center", "padding":"0.5vw"}}>
+                        <img src="./icons/instagramLogo.png"
+                        style={{"width":"6vw","height":"6vw"}}
+                        ></img>
+                         
+                    </div>
+                    <a style={{"fontSize":"2vw"}} target="_blank" href='https://www.instagram.com/rhscodingclub/'>Instagram</a>
+                    <div style={{"textAlign":"center", "padding":"0.5vw"}}>
+                        <img src="./icons/youtubeLogo.png"
+                        style={{"width":"6vw","height":"6vw"}}
+                        ></img>
+                         
+                    </div>
+                    <a style={{"fontSize":"2vw"}} target="_blank" href='https://www.youtube.com/channel/UCqakvmaEw3OYRjkpY1gXKag'>Youtube</a>
+                </div>
+                <div className='Meeting'>
+
+                </div>
+
+                <div className='toJoin'>
+                    
                 </div>
             </div>
         </>

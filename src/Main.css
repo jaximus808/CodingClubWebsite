@@ -54,9 +54,9 @@
 {
     
     color:black;
-    background-color: white;
-    grid-column-start: 14;
-    grid-column-end:19;
+    background-color: rgba(255, 255, 255,0.9);
+    grid-column-start: 15;
+    grid-column-end:20;
     grid-row-start: 1;
     grid-row-end: 5;
     padding: 1vw;
@@ -67,7 +67,7 @@
 .doing
 {
     color:black;
-    background-color: white;
+    background-color: rgba(255, 255, 255,0.9);
     grid-column-start: 2;
     grid-column-end:12;
     grid-row-start: 1;
@@ -80,11 +80,38 @@
 .Socials
 {
     color:black;
-    background-color: white;
+    background-color: rgba(255, 255, 255,0.9);;
     grid-column-start: 2;
     grid-column-end:5;
     grid-row-start: 6;
     grid-row-end: 10;
+    padding: 1vw;
+    float: right;
+    font-family: 'Teko', sans-serif;
+    text-align: center;
+}
+.Meeting
+{
+    color:black;
+    background-color: rgba(255, 255, 255,0.9);;
+    grid-column-start: 7;
+    grid-column-end:20;
+    grid-row-start: 6;
+    grid-row-end: 10;
+    padding: 1vw;
+    float: right;
+    font-family: 'Teko', sans-serif;
+    text-align: center;
+}
+
+.toJoin
+{
+    color:black;
+    background-color: rgba(255, 255, 255,0.9);;
+    grid-column-start: 2;
+    grid-column-end:20;
+    grid-row-start: 11;
+    grid-row-end: 15;
     padding: 1vw;
     float: right;
     font-family: 'Teko', sans-serif;

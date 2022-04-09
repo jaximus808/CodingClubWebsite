@@ -14,27 +14,6 @@ import { Plane } from '@react-three/drei';
 
 extend({ EffectComposer, RenderPass, UnrealBloomPass })
 
-function Model(props ) {
-    const group = useRef()
-  const { nodes, materials } = useGLTF('/dell/scene.gltf')
-  return (
-    <group ref={group} scale={props.scale} rotation={props.rotation} position={props.pos} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]}>
-        <group rotation={[Math.PI / 2, 0, 0]}>
-          <group position={[-0.09, 0.15, 0]} scale={[0.08, 0.08, 0.16]}>
-            <mesh geometry={nodes.Object_4.geometry} material={materials.material} />
-            <mesh geometry={nodes.Object_5.geometry} material={materials.material_1} />
-            <mesh geometry={nodes.Object_6.geometry} material={materials.material_2} />
-            <mesh geometry={nodes.Object_7.geometry} material={materials.material_3} />
-            <mesh geometry={nodes.Object_8.geometry} material={materials.material_4} />
-            <mesh geometry={nodes.Object_9.geometry} material={materials['.002']} />
-            <mesh geometry={nodes.Object_10.geometry} material={materials['.001']} />
-            <mesh geometry={nodes.Object_11.geometry} material={materials['.003']} />
-          </group>
-        </group>
-      </group>
-    </group>
-    )}
 function Triangle(props) {
     const group = useRef()
     const { nodes, materials } = useGLTF('/triangle/scene.gltf')
