@@ -27,7 +27,8 @@ export default function Main(props)
             <div className='container' style={{position:'absolute',color:"white"}}>
                 <div className='doing'>
                     <span style={{"fontWeight":"bold", "fontSize":"3vw"} }>What is the Coding Club?</span>
-                    <div style={{"padding":"1vw", "font-size":"1.5vw"}} >  <img style={{"width":"50%", "float":"right", "padding-left":"20px"}} src='https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTE4MDAzNDEwNzg5ODI4MTEw/barack-obama-12782369-1-402.jpg'></img>This club started from a group of passionate students wanting to share their fondness for coding. The club's purpose is to give students the knowledge and tools to fulfill their passions through software development. Members will learn how to program in modern languages to engage in competitions, create projects, and fulfill one's passion. Meetings will consist of students learning different aspects of computer science from networking, algorithms, game development, and more. We wish to give students more opportunities to find their footing in the computer science world and share creative ideas with their community.
+                    <div style={{"padding":"1vw", "font-size":"1.7vw"}} > 
+                     <img style={{"width":"50%", "float":"right", "padding-left":"20px"}} src='https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTE4MDAzNDEwNzg5ODI4MTEw/barack-obama-12782369-1-402.jpg'></img>This club started from a group of passionate students wanting to share their fondness for coding. The club's purpose is to give students the knowledge and tools to fulfill their passions through software development. Members will learn how to program in modern languages to engage in competitions, create projects, and fulfill one's passion. Meetings will consist of students learning different aspects of computer science from networking, algorithms, game development, and more. We wish to give students more opportunities to find their footing in the computer science world and share creative ideas with their community.
                 </div>
                     
                 </div>
@@ -68,11 +69,13 @@ export default function Main(props)
                     <a style={{"fontSize":"2vw"}} target="_blank" href='https://www.youtube.com/channel/UCqakvmaEw3OYRjkpY1gXKag'>Youtube</a>
                 </div>
                 <div className='Meeting'>
-
+                <div style={{"fontWeight":"bold", "fontSize":"3vw"} }>Where Do We Meet?</div>
+                <div style={{"padding":"1vw", "font-size":"1.7vw"}} >
+                <img style={{"width":"50%", "float":"right", "padding-left":"20px"}} src='./discordscreenshot.png'></img>The Coding Club meets Tuesdays and Thursdays afterschool in room F103 with meetings lasting 1-2 hours. We will have different activities for students based on their ability and interests. Students new to programming will learn the aspects of computer science and coding principles. Those with experience will focus on creating projects in fields they are interested in such as webapps or machine learning projects. Outside of school, the club will use discord as the main method of communication with events being posted on discord and this website. Most competitions will be online so those will either be completed at home or at school. Any In-person competitions will require a parent signature. If any events, online or in-person, interfere with school hours then teacher and principal signatures will also be required.</div>
                 </div>
 
                 <div className='toJoin'>
-                    
+                <div style={{"fontWeight":"bold", "fontSize":"3vw"} }>Where To Get Started?</div>
                 </div>
             </div>
         </>

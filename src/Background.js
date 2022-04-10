@@ -93,30 +93,34 @@ function Triangle2({ ...props }) {
 function Box(props)
 {
   const [xPos, setXPos] = useState(props.pos[0]);
+  const [Yrotation, setYRotation] = useState(0); 
+
+  const [Xrotation, setXRotation] = useState(0); 
+
+  const [Zrotation, setZRotation] = useState(0); 
+
+    useFrame((state, delta) =>
+    {
+      setYRotation(Yrotation-0.02);
+      setXRotation(Xrotation+0.001);
+      setZRotation(Zrotation+0.001); 
+      if(Yrotation > 2*Math.PI) setYRotation(Yrotation -2*Math.PI)
+      if(Xrotation < 0) setXRotation(Xrotation + 2*Math.PI)
+      if(Zrotation > 2*Math.PI) setZRotation(Zrotation -2*Math.PI)
+
+    })
 
   const ref = useRef(); 
-  useFrame((state, delta) =>
-  {
-    setXPos(xPos+0.01);
-  })
+  
 
   return (
-      <mesh position={[0, -25, -80]} rotation={[0,Math.PI/4,0]} ref={ref} >
+      <mesh scale={2} position={[0, -25, -80]} rotation={[Xrotation,Yrotation+Math.PI/4,Zrotation]} ref={ref} >
         <boxBufferGeometry args={[1,1,1]} attach="geometry"/>
         <meshPhongMaterial color={"lightblue"} attach="material"></meshPhongMaterial>
       </mesh>
   )
 }
 
-function BlockFunction(props)
-{
-
-  return (
-    <>
-      <Box pos={[0, props.z, 0]} />
-    </>
-  )
-}
 
 function Background(props) {
     return (
