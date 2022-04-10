@@ -2,9 +2,57 @@ import { useFrame } from '@react-three/fiber';
 import { useState,useEffect } from 'react';
 import './Main.css';
 
+
+
 export default function Main(props)
 {
    
+
+    const [loaded, load] = useState(false)
+    const [name, setName] = useState("")
+    const [description, setDescription] = useState("")
+    const [image, setImage] = useState("")
+
+    const [month, setMonth] = useState()
+    const [day, setDay] = useState()
+    const [year, setYear] = useState()
+
+    useEffect(() => 
+    {
+        console.log(`${window.location.protocol}//${window.location.host}/api/getRecentEvent`)
+        try{
+            fetch(`${window.location.protocol}//${window.location.host}/api/getRecentEvent`, {
+            method:"GET",
+            mode:"cors",
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        }).then(res=>res.json())
+        .then(data =>
+            {
+                
+                console.log(data)
+            
+                setName(data.name)
+                const date =new Date(data.eventDate);
+                setDescription(data.description)
+                setImage(data.imageLink)
+                setDay(date.getDate())
+                setMonth(date.getMonth())
+                setYear(date.getFullYear())
+                load(true)
+
+            });
+        }
+        catch
+        {
+
+            setName("Could not load data :(")
+
+            load(true)
+        }
+    },[])
+
 
     return(
         <>
@@ -75,7 +123,28 @@ export default function Main(props)
                 </div>
 
                 <div className='toJoin'>
-                <div style={{"fontWeight":"bold", "fontSize":"3vw"} }>Where To Get Started?</div>
+                <div style={{"fontWeight":"bold", "fontSize":"3vw"} }>Where Do I Get Started?</div>
+                <div style={{"fontSize":"2vw"}}>If you’re interested in joining the coding club then the first step to take is to fill out the registration forms. These forms along with more registration information can be found in our <a href="/Registration">Registration Page</a>. If you need further more explicit information about our club then check out our 
+                <a href="/Resources">Resources Page</a>. Want to know the officers and the club more then check out the <a href="/AboutUs">About Us Page</a>. Curious to see what events are coming up? Be sure to check out our <a href="/Events">Events Page</a>. We are excited to see you be a part of our coding community! Manifest inspiration into 1s and 0s! </div>
+                </div>
+                
+
+                <div className='Annoucements'>
+                    <div style={{"fontWeight":"bold", "fontSize":"3vw"} }>Recent Annoucements</div>
+                    {!loaded ? <div style={{"fontSize":"2.5vw"}}>Loading . . .</div>
+                    :
+                        <div>
+                            <img style={{"width":"12vw", "height":"12vw"}} src={image}></img>
+                            <div style={{"fontSize":"3vw","textDecoration":"underline"}}>{name}</div>
+                            <div style={{"fontSize":"2vw"}}>Event Date: {month}/{day}/{year}</div>
+                            <div style={{"fontSize":"2vw"}}>Description: {description}</div>
+                        </div>
+                    }
+                </div>
+
+                <div className='BottomBase'>
+                    <div style={{"fontSize":"1.3vw"}}>This Website was made by Jaxon Poentis, the President of The Coding Club, and is powered by React and Expressjs using Nodejs as the runtime enviornment. All <a style={{color:"white"}} target="_blank" href='https://github.com/jaximus808/CodingClubWebsite'>Source Code</a>, exclduing modules, are written entirely by the President of this club. Any similarities in design are purely coincidental. Any information or images of members and officers are used with consent. Information about this can be found more in our resources page. </div>
+                    <img style={{"width":"5vw","height":"5vw"}} src='./codingClubLogo.png'></img>
                 </div>
             </div>
         </>
