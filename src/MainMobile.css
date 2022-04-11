@@ -4,7 +4,7 @@
 {
     position: absolute;
     left:50%;
-    top:30%;
+    top:20%;
     transform: translate(-50%, 0);
     font-size: 9vw;
     width:100%;
@@ -14,57 +14,57 @@
 
 }
 
-.links
+.linksMobile
 {
     position: absolute;
     left:50%;
-    top:80%;
+    top:60%;
     transform: translate(-50%, 0);
-    font-size: 2.5vw;
-    width:50%;
+    font-size: 6vw;
+    width:100%;
     text-align: center;
     font-family: 'Teko', sans-serif;
     z-index:5;
 
   
 }
-.links > a
+.linksMobile > a
 {
     margin-left: 2vw;
     color:#00b3fe;
 }
 
 
-.fixedLinks
+.fixedLinksMobile
 {
     position: fixed;
     left:50%;
-    top:-4vw;
+    top:-10vw;
     transform: translate(-50%, 0);
-    font-size: 2.5vw;
+    font-size: 7vw;
     width:50%;
     text-align: center;
     font-family: 'Teko', sans-serif;
     z-index:5;
     transition: 1s;
     width: 100%;
-    height: 4vw;
+    height: 10vw;
     background-color: #143F6B;
 
   
 }
-.fixedLinks > a
+.fixedLinksMobile > a
 {
     margin-left: 2vw;
     color:#00b3fe;
 }
 
-.container
+.containerMobile
 {
     display: grid;
     justify-content: space-evenly;
     grid-template-columns:repeat(20,5%);
-    grid-template-rows:repeat(20,10vw);
+    grid-template-rows:repeat(100,10vw);
     position:absolute;
     top:100%;
     width:100%;
@@ -76,93 +76,100 @@
     float: right;
 }
 
-.lang
+.langMobile
 {
     
     color:black;
     background-color: rgba(255, 255, 255,0.9);
-    grid-column-start: 15;
+    grid-column-start: 2;
     grid-column-end:20;
-    grid-row-start: 1;
-    grid-row-end: 5;
+    grid-row-start: 17;
+    grid-row-end: 24;
     padding: 1vw;
+    padding-right: 5vw;
     float: right;
+    text-align: center;
     font-family: 'Teko', sans-serif;
 }
 
-.doing
+.doingMobile
 {
     color:black;
     background-color: rgba(255, 255, 255,0.9);
     grid-column-start: 2;
-    grid-column-end:12;
+    grid-column-end:20;
     grid-row-start: 1;
-    grid-row-end: 5;
+    grid-row-end: 16;
     padding: 1vw;
     float: right;
     font-family: 'Teko', sans-serif;
 }
 
-.Socials
+.SocialsModile
 {
     color:black;
     background-color: rgba(255, 255, 255,0.9);;
     grid-column-start: 2;
-    grid-column-end:5;
-    grid-row-start: 6;
-    grid-row-end: 10;
+    grid-column-end:20;
+    grid-row-start: 52;
+    grid-row-end: 57;
     padding: 1vw;
     float: right;
     font-family: 'Teko', sans-serif;
-    text-align: center;
+    display: grid;
+
+    grid-template-columns:repeat(50,2%);
+    grid-template-rows:repeat(10,10%);
+
 }
-.Meeting
+.MeetingMobile
 {
     color:black;
     background-color: rgba(255, 255, 255,0.9);;
-    grid-column-start: 7;
+    grid-column-start: 2;
+    text-align: center;
     grid-column-end:20;
-    grid-row-start: 6;
-    grid-row-end: 10;
+    grid-row-start: 25;
+    grid-row-end: 51;
     padding: 1vw;
     float: right;
     font-family: 'Teko', sans-serif;
 }
 
-.toJoin
+.toJoinMobile
 {
     color:black;
     background-color: rgba(255, 255, 255,0.9);;
     grid-column-start: 2;
     grid-column-end:20;
-    grid-row-start: 11;
-    grid-row-end: 14;
+    grid-row-start: 58;
+    grid-row-end: 74;
     padding: 1vw;
     float: right;
     font-family: 'Teko', sans-serif;
     text-align: center;
 }
-.Annoucements
+.AnnoucementsMobile
 {
     color:black;
     background-color: rgba(255, 255, 255,0.9);;
     grid-column-start: 2;
     grid-column-end:20;
-    grid-row-start: 15;
-    grid-row-end: 19;
+    grid-row-start: 75;
+    grid-row-end: 94;
     padding: 1vw;
     float: right;
     font-family: 'Teko', sans-serif;
     text-align: center;
 }
-.BottomBase
+.BottomBaseMobile
 {
     color:white;
     background-color: #143F6B;
     grid-column-start: 1;
     grid-column-end:21;
-    grid-row-start: 20;
-    grid-row-end: 21;
+    grid-row-start: 95;
+    grid-row-end: 102;
     padding: 1vw;
     float: right;
     font-family: 'Teko', sans-serif;

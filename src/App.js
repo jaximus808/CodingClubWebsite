@@ -3,6 +3,7 @@ import './App.css';
 import Background from "./Background"
 import Main from "./Main"
 import Info from "./Info"
+import AboutUs from "./AboutUs"
 import {
   BrowserRouter as Router,
   Routes,
@@ -16,6 +17,7 @@ function RouteWrapper()
   let routes = useRoutes([
     {path:"/", element:<Main/>},
     {path:"/Info", element:<Info/>},
+    {path:"/AboutUs", element:<AboutUs/>},
   ])
   return routes; 
 }
