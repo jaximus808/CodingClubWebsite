@@ -96,10 +96,16 @@ router.post("/getEvents/", async (req, res) =>
         let endState = (req.body.start+5 >= events.length);
         if(req.body.end > events.length) req.body.end = events.length;
 
-        if(req.body.start >= events.length) req.body.start = 0; 
+        if(req.body.start >= events.length)
+        {
+            req.body.start = 0; 
+        } 
+        if(req.body.start < 0 ) return res.send({error:true})
 
 
-        const eventList = events.splice(req.body.start, req.body.end);
+        const eventList = events.splice(req.body.start, 5);
+
+        //console.log(eventList)
         for(const x in eventList)
         {
             eventList[x].toJSON();

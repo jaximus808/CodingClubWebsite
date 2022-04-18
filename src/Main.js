@@ -185,14 +185,14 @@ function Computer(props)
                 
 
                 <div className='Annoucements'>
-                    <div style={{"overflow":"clip","fontWeight":"bold", "fontSize":"3vw"} }>Recent Annoucement</div>
+                    <div style={{"textAlign":"center","overflow":"clip","fontWeight":"bold", "fontSize":"3vw"} }>Recent Annoucement</div>
                     {!loaded ? <div style={{"fontSize":"2.5vw"}}>Loading . . .</div>
                     :
-                        <div style={{width:"5vw",width:"5vw"}} >
+                        <div >
                             <img style={{"width":"12vw", "height":"12vw"}} src={image}></img>
                             <div style={{"fontSize":"3vw","textDecoration":"underline"}}>{name}</div>
                             <div style={{"fontSize":"2vw"}}>Event Date: {month}/{day}/{year}</div>
-                            <div style={{"fontSize":"2vw"}}>Description: {description}</div>
+                            <div className='descriptionEventMain' style={{"fontSize":"2vw"}}>Description: {description}</div>
                         </div>
                     }
                 </div>
@@ -394,7 +394,7 @@ function Mobile(props)
                             <img style={{"width":"30vw", "height":"30vw"}} src={image}></img>
                             <div style={{"fontSize":"8vw","textDecoration":"underline"}}>{name}</div>
                             <div style={{"fontSize":"7vw"}}>Event Date: {month}/{day}/{year}</div>
-                            <div style={{"overflow":"clip", "fontSize":"7vw"}}>Description: {description}</div>
+                            <div className='descriptionEventMain' style={{"overflow":"clip", "fontSize":"7vw"}}>Description: {description}</div>
                         </div>
                     }
                 </div>

@@ -3,6 +3,9 @@ import './Events.css';
 
 
 
+
+
+
 export default function Events(props)
 {
     const yRef = useRef(0);
@@ -45,8 +48,19 @@ export default function Events(props)
     const getEvents = (dir) =>
     {
         //move right
+        console.log("boom")
         if(dir == 1 && !atEnd ) setPage(page+1);
-        else if(page == 0 && dir == 0) setPage(page -1);
+        else if(page > 0 && dir == -1) 
+        {
+            console.log("DOWN?")
+            setPage(page-1);
+        }
+        else 
+        {
+            console.log("OOF")
+            return
+        }
+        console.log(page)
         fetch(`${window.location.protocol}//${window.location.host}/api/getEvents`, {
             method:"POST",
             mode:"cors",
@@ -55,16 +69,16 @@ export default function Events(props)
             },
             body:JSON.stringify(
                 {
-                    start:page*5,
-                    end:5 +page*5//make this based on something later
+                    start:(page+dir)*5,
+                    end:5 +(dir+page)*5//make this based on something later
                 }
             )
         }).then(res=>res.json())
         .then(data =>
             {
-                
+                if(data.error) return;
                 console.log(data.events)
-                
+                eventData.splice(0,5)
                 for(let i = 0; i < data.events.length; i++)
                 {
                     const dateOb = new Date(data.events[i].EventDate);
@@ -72,8 +86,7 @@ export default function Events(props)
                     eventData.push(data.events[i])
 
                 }
-
-
+                setEnd(data.end)
                 console.log(eventData)
                 load(true)
 
@@ -112,6 +125,7 @@ export default function Events(props)
 
 
                 console.log(eventData)
+                setEnd(data.end)
                 load(true)
 
             });
@@ -183,12 +197,20 @@ export default function Events(props)
 
                     </div>
 
-                    <div style={{"position":"inherit", "textAlign":"center" , "bottom":"0px","width":"10vw","height":"5vw", "right":"0px","backgroundColor":"gray" }}>
+                    <div style={{"position":"inherit","fontSize":"2vw","float":"right","textAlign":"center" , "bottom":"0px","width":"20vw","height":"5vw", "right":"0px"}}>
                         {(loaded) ? 
-                        <>
-                            <button className='MoveButton'> {"< Back"}</button>
-                            <button style={{}}> {"Next >"}</button>
-                        </> 
+                        <div>
+                            <button  onClick={(atEnd) ?null:()=>
+                            {
+                                getEvents(1)
+                            }} className={(atEnd) ? "":"MoveButton"} style={ (atEnd) ? {"fontSize":"1.5vw",backgroundColor: "rgba(0,0,0,0)",color:"rgba(1,1,1,0.5)",border: "none",padding: "1vw"}:{}} > {"Next >"}</button>
+                            <div>Page {page+1}</div>
+                            <button onClick={(page==0) ?null:()=>
+                            {
+                                console.log("?")
+                                getEvents(-1)
+                            }} className={(page == 0) ? "":"MoveButton"} style={ (page == 0) ? {"fontSize":"1.5vw",backgroundColor: "rgba(0,0,0,0)",color:"rgba(1,1,1,0.5)",border: "none",padding: "1vw"}:{}}  > {"< Back"}</button>
+                        </div> 
                             : <></>}
                     </div>
                 </div>
