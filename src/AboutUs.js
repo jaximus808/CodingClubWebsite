@@ -84,7 +84,7 @@ export default function AboutUs(props)
 
             
 
-            <div className='container' style={{position:'absolute',color:"white"}}>
+            <div className='containerAbout' style={{position:'absolute',color:"white"}}>
                 
                 <div className='WeDo'>
                     <div style={{"fontWeight":"bold", "fontSize":"3vw"} }>Inspiration Through 1s and 0s</div>
@@ -97,7 +97,7 @@ export default function AboutUs(props)
                         <div className='president'>
                             <img style={{width:"20vw",height:"23vw"}} src="./OfficersPortrait/President.png"></img>
                             <div style={{"fontSize":"2.5vw"}}>President: Jaxon Poentis</div>
-                            <div style={{"fontSize":"1.5vw"}}>Hi my name is Jaxon Poentis and I am the president and founder of the Roosevelt Coding Club. I am a self-taught programming and have spent two years learning C#, python, and other languages. I have a passion for creating things through solving problems and creativity. My outlet to do so has been through coding and I want others with simillar interests as me share ideas and create a mark on this world.</div>
+                            <div style={{"fontSize":"1.5vw"}}>Hi my name is Jaxon Poentis and I am the president and founder of the Roosevelt Coding Club. I am a self-taught programmer and have spent two years learning C#, python, and other languages. I have a passion for creating things through solving problems and creativity. My outlet to do so has been through coding and I want others with simillar interests as me share ideas and create a mark on this world.</div>
                         </div>
                         <div className='vicePresident'>
                             <img style={{width:"20vw",height:"23vw", float:"right", paddingLeft:"10px"}} src="./OfficersPortrait/President.png"></img>
@@ -107,6 +107,16 @@ export default function AboutUs(props)
                         <div className='secretary'>
                             <img style={{width:"20vw",height:"23vw", float:"right", paddingLeft:"10px"}} src="./OfficersPortrait/Secretary.png"></img>
                             <div style={{"fontSize":"2.5vw"}}>Secretary: Mana Harada</div>
+                            <div style={{"fontSize":"1.5vw"}}> deez nuts </div>
+                        </div>
+                        <div className='treasure'>
+                            <img style={{width:"20vw",height:"23vw", float:"right", paddingLeft:"10px"}} src="./OfficersPortrait/President.png"></img>
+                            <div style={{"fontSize":"2.5vw"}}>Treasurer: Peilin Wu</div>
+                            <div style={{"fontSize":"1.5vw"}}> deez nuts </div>
+                        </div>
+                        <div className='historian'>
+                            <img style={{width:"20vw",height:"23vw", float:"right", paddingLeft:"10px"}} src="./OfficersPortrait/Secretary.png"></img>
+                            <div style={{"fontSize":"2.5vw"}}>Historian: Freddie Liang</div>
                             <div style={{"fontSize":"1.5vw"}}> deez nuts </div>
                         </div>
                         

@@ -134,14 +134,16 @@ function Computer(props)
                     
                 </div>
                 <div className='lang'>
-                    <span style={{"font-weight":"bold", "font-size":"3vw"} }>What Tools Do We Use?</span>
-                    <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1200px-ISO_C%2B%2B_Logo.svg.png' style={{"width":"10vw","height":"11vw" }}></img>
-                    <img src='https://cdn.worldvectorlogo.com/logos/c--4.svg' style={{"float":"right", "width":"10vw","height":"10vw" }}></img>
-                    <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Node.js_logo_2015.svg/2560px-Node.js_logo_2015.svg.png' style={{"width":"15vw","height":"4vw" }}></img>
-                    
-                    <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png' style={{"float":"right", "width":"10vw","height":"10vw" }}></img>
-                    <img src='https://www.freepnglogos.com/uploads/javascript-png/javascript-logo-transparent-logo-javascript-images-3.png' style={{"float":"left", "width":"12vw","height":"6vw" }}></img>
-                    <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png' style={{"float":"left", "width":"12vw","height":"11vw" }}></img>
+                    <div style={{"textAlign":"center", "font-weight":"bold", "font-size":"3vw"} }>What Tools Do We Use?</div>
+                    <div style={{"display":"grid", "gridTemplateColumns":"repeat(20,5%)", "gridTemplateRows":"repeat(20,1%)" }}>
+                        <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1200px-ISO_C%2B%2B_Logo.svg.png' style={{"width":"10vw","height":"11vw" ,gridColumnStart:"2"}}></img>
+                        <img  src='https://cdn.worldvectorlogo.com/logos/c--4.svg' style={{"gridColumnStart":"5","float":"right", "width":"11vw","height":"11vw" }}></img>
+                        <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Node.js_logo_2015.svg/2560px-Node.js_logo_2015.svg.png' style={{marginTop:"3vw","gridColumnStart":"8","width":"15vw","height":"4vw" }}></img>
+                        
+                        <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png' style={{"gridColumnStart":"12","float":"right", "width":"10vw","height":"10vw" }}></img>
+                        <img src='https://www.freepnglogos.com/uploads/javascript-png/javascript-logo-transparent-logo-javascript-images-3.png' style={{marginTop:"1.5vw",marginLeft:"3vw","gridColumnStart":"14","float":"left", "width":"15vw","height":"8vw" }}></img>
+                        <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png' style={{"gridColumnStart":"18","float":"left", "width":"12vw","height":"11vw" }}></img>    
+                    </div>
                     
                     
                 </div>
@@ -183,10 +185,10 @@ function Computer(props)
                 
 
                 <div className='Annoucements'>
-                    <div style={{"fontWeight":"bold", "fontSize":"3vw"} }>Recent Annoucement</div>
+                    <div style={{"overflow":"clip","fontWeight":"bold", "fontSize":"3vw"} }>Recent Annoucement</div>
                     {!loaded ? <div style={{"fontSize":"2.5vw"}}>Loading . . .</div>
                     :
-                        <div>
+                        <div style={{width:"5vw",width:"5vw"}} >
                             <img style={{"width":"12vw", "height":"12vw"}} src={image}></img>
                             <div style={{"fontSize":"3vw","textDecoration":"underline"}}>{name}</div>
                             <div style={{"fontSize":"2vw"}}>Event Date: {month}/{day}/{year}</div>

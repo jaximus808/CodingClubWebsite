@@ -19,6 +19,9 @@ app.use("/api", require("./routes/events"));
 
 app.use("/",express.static(path.join(__dirname,"..","build")))
 
-app.use("/info",express.static(path.join(__dirname,"..","build")))
+app.use("/Info",express.static(path.join(__dirname,"..","build")))
+
+app.use("/Registration",express.static(path.join(__dirname,"..","build")))
+app.use("/Events",express.static(path.join(__dirname,"..","build")))
 
 app.listen(3000, () =>console.log("Server up"))

@@ -1,0 +1,50 @@
+.HowtoJoin
+{
+    color:black;
+    background-color: rgba(255, 255, 255,0.9);
+    grid-column-start: 2;
+    grid-column-end:20;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    padding: 1vw;
+    float: right;
+    font-family: 'Teko', sans-serif;
+}
+
+.containerRegistration
+{
+    display: grid;
+    justify-content: space-evenly;
+    grid-template-columns:repeat(20,5%);
+    grid-template-rows:repeat(14,10vw);
+    position:absolute;
+    top:100%;
+    width:100%;
+}
+
+.NeedToJoin
+{
+    color:black;
+    background-color: rgba(255, 255, 255,0.9);
+    grid-column-start: 2;
+    grid-column-end:20;
+    grid-row-start: 5;
+    grid-row-end: 13;
+    padding: 1vw;
+    float: right;
+    font-family: 'Teko', sans-serif; 
+}
+
+.BottomBaseReg
+{
+    color:white;
+    background-color: #143F6B;
+    grid-column-start: 1;
+    grid-column-end:21;
+    grid-row-start: 14;
+    grid-row-end: 15;
+    padding: 1vw;
+    float: right;
+    font-family: 'Teko', sans-serif;
+    text-align: center; 
+}

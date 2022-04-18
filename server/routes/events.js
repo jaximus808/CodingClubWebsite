@@ -66,4 +66,56 @@ router.get("/getRecentEvent/", async (req, res) =>
 
 }) 
 
+router.post("/getEvents/", async (req, res) =>
+{
+    try
+    {
+        var events = await Event.find()
+        
+        //console.log(events)
+        
+        events.sort((a,b) =>
+        {
+            const dateA = new Date(a.EventDate);
+            const epochA = dateA.getTime();
+            const dateB = new Date(b.EventDate);
+            const epochB = dateB.getTime();
+
+            if(epochA < epochB)
+            {
+                return -1; 
+            }
+
+            if(epochA > epochB)
+            {
+                return 1; 
+            }
+
+            return 0; 
+        });
+        let endState = (req.body.start+5 >= events.length);
+        if(req.body.end > events.length) req.body.end = events.length;
+
+        if(req.body.start >= events.length) req.body.start = 0; 
+
+
+        const eventList = events.splice(req.body.start, req.body.end);
+        for(const x in eventList)
+        {
+            eventList[x].toJSON();
+            const dateOb = new Date(eventList[x].eventDate);
+            eventList[x].dateFormat = `${dateOb.getMonth()}/${dateOb.getDate()}/${dateOb.getFullYear()}`;
+        }
+        //console.log(events)
+        res.send({error:false, events:eventList, end:endState})
+    }
+    catch(e)
+    {
+        console.log(e)
+        res.send({error:true, message:"something went wrong" });
+    }
+
+}) 
+
+
 module.exports = router
