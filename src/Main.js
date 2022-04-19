@@ -306,9 +306,9 @@ function Mobile(props)
             @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Teko&display=swap');
             </style> 
             
-            <div  className='ClubTitle'>
+            <div  className='ClubTitleMobile'>
                 The Coding Club
-                <div style={{fontSize:"4vw"}}>Roosevelt Highschool</div>
+                <div style={{fontSize:"6vw"}}>Roosevelt Highschool</div>
             </div>
             <div ref={headerElement} className='linksMobile'>
                 <a href="/AboutUs">About Us</a>

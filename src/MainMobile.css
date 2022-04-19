@@ -1,12 +1,12 @@
 
 
-.ClubTitle
+.ClubTitleMobile
 {
     position: absolute;
     left:50%;
     top:20%;
     transform: translate(-50%, 0);
-    font-size: 9vw;
+    font-size: 15vw;
     width:100%;
     text-align: center;
     color:white;

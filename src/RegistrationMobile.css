@@ -1,0 +1,53 @@
+.containerRegistrationMobile
+{
+    display: grid;
+    justify-content: space-evenly;
+    grid-template-columns:repeat(20,5%);
+    grid-template-rows:repeat(62,10vw);
+    position:absolute;
+    top:80%;
+    width:100%;
+    text-align: center;
+}
+
+.BottomBaseRegMobile
+{
+    color:white;
+    background-color: #143F6B;
+    grid-column-start: 1;
+    grid-column-end:21;
+    grid-row-start: 57;
+    grid-row-end: 64;
+    padding: 1vw;
+    float: right;
+    font-family: 'Teko', sans-serif;
+    text-align: center; 
+}
+
+.HowtoJoinMobile
+{
+    
+    color:black;
+    background-color: rgba(255, 255, 255,0.9);
+    grid-column-start: 2;
+    grid-column-end:20;
+    grid-row-start: 1;
+    grid-row-end: 12;
+    padding: 1vw;
+    float: right;
+    font-family: 'Teko', sans-serif;
+}
+
+.NeedToJoinMobile
+{
+    color:black;
+    background-color: rgba(255, 255, 255,0.9);
+    grid-column-start: 2;
+    grid-column-end:20;
+    grid-row-start: 13;
+    grid-row-end: 52;
+    padding: 1vw;
+    float: right;
+    font-family: 'Teko', sans-serif; 
+
+}

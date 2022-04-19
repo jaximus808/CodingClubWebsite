@@ -1,0 +1,127 @@
+.WeDoMobile
+{
+    color:black;
+    background-color: rgba(255, 255, 255,0.9);
+    grid-column-start: 2;
+    grid-column-end:20;
+    grid-row-start: 95;
+    grid-row-end: 115;
+    padding: 1vw;
+    float: right;
+    font-family: 'Teko', sans-serif;
+    text-align: center;
+}
+
+.containerAboutMobile
+{
+    display: grid;
+    justify-content: space-evenly;
+    grid-template-columns:repeat(20,5%);
+    grid-template-rows:repeat(120,10vw);
+    position:absolute;
+    top:100%;
+    width:100%;
+}
+
+.OfficersMobile
+{
+    color:black;
+    background-color: rgba(255, 255, 255,0.9);
+    grid-column-start: 2;
+    grid-column-end:20;
+    grid-row-start: 2;
+    grid-row-end:92;
+    padding: 1vw;
+    float: right;
+    font-family: 'Teko', sans-serif;
+    text-align: center;
+}
+
+.officerContainersMobile
+{
+    display: grid;
+    justify-content: space-evenly;
+    grid-template-columns:repeat(20,5%);
+    grid-template-rows:repeat(200,5vw);
+}
+
+.presidentMobile
+{
+    color:black;
+    background-color: #f0f0f0;
+    grid-column-start: 2;
+    grid-column-end:20;
+    grid-row-start: 1;
+    grid-row-end: 33;
+    padding: 1vw;
+    float: right;
+    font-family: 'Teko', sans-serif;
+    text-align: center;
+}
+
+.vicePresidentMobile
+{
+    color:black;
+    background-color: #f0f0f0;
+    grid-column-start: 2;
+    grid-column-end:20;
+    grid-row-start: 35;
+    grid-row-end: 67;
+    padding: 1vw;
+    float: right;
+    font-family: 'Teko', sans-serif;
+
+}
+.secretaryMobile
+{
+    color:black;
+    background-color: #f0f0f0;
+    grid-column-start: 2;
+    grid-column-end:20;
+    grid-row-start: 68;
+    grid-row-end: 103;
+    padding: 1vw;
+    float: right;
+    font-family: 'Teko', sans-serif;
+
+}
+
+.treasureMobile
+{
+    color:black;
+    background-color: #f0f0f0;
+    grid-column-start:2 ;
+    grid-column-end:20;
+    grid-row-start: 105;
+    grid-row-end: 140;
+    padding: 1vw;
+    float: right;
+    font-family: 'Teko', sans-serif;
+}
+
+
+.historianMobile
+{
+    color:black;
+    background-color: #f0f0f0;
+    grid-column-start:2 ;
+    grid-column-end:20;
+    grid-row-start: 142;
+    grid-row-end: 177;
+    padding: 1vw;
+    float: right;
+    font-family: 'Teko', sans-serif;
+}
+.BottomBaseAboutMobile
+{
+    color:white;
+    background-color: #143F6B;
+    grid-column-start: 1;
+    grid-column-end:21;
+    grid-row-start: 175;
+    grid-row-end: 181;
+    padding: 1vw;
+    float: right;
+    font-family: 'Teko', sans-serif;
+    text-align: center; 
+}
