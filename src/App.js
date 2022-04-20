@@ -6,6 +6,7 @@ import Info from "./Info"
 import AboutUs from "./AboutUs"
 import Registration from "./Registration"
 import Events from './Events';
+import Resources from './Resources';
 import {
   BrowserRouter as Router,
   Routes,
@@ -21,7 +22,9 @@ function RouteWrapper()
     {path:"/Info", element:<Info/>},
     {path:"/AboutUs", element:<AboutUs/>},
     {path:"/Registration", element:<Registration/>},
-    {path:"/Events", element:<Events/>}
+    {path:"/Events", element:<Events/>},
+    {path:"/Resources", element:<Resources/>},
+
   ])
   return routes; 
 }

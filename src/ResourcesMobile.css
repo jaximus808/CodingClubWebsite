@@ -1,0 +1,37 @@
+.containerResourcesMobile
+{
+    display: grid;
+    justify-content: space-evenly;
+    grid-template-columns:repeat(20,5%);
+    grid-template-rows:repeat(20,10vw);
+    position:absolute;
+    top:80%;
+    width:100%;
+}
+
+.FormLinksMobile
+{
+    color:black;
+    background-color: rgba(255, 255, 255,0.9);
+    grid-column-start: 2;
+    grid-column-end:20;
+    grid-row-start: 2;
+    grid-row-end: 10;
+    padding: 1vw;
+    float: right;
+    font-family: 'Teko', sans-serif;
+}
+
+.BottomBaseResourcesMobile
+{
+    color:white;
+    background-color: #143F6B;
+    grid-column-start: 1;
+    grid-column-end:21;
+    grid-row-start: 15;
+    grid-row-end: 21;
+    padding: 1vw;
+    float: right;
+    font-family: 'Teko', sans-serif;
+    text-align: center; 
+}

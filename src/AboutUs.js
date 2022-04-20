@@ -99,17 +99,17 @@ function Computer(props)
                         <div className='vicePresident'>
                             <img style={{width:"20vw",height:"23vw", float:"right", paddingLeft:"10px"}} src="./OfficersPortrait/President.png"></img>
                             <div style={{"fontSize":"2.5vw"}}>Vice president: Cindy Mo</div>
-                            <div style={{"fontSize":"1.5vw"}}> deez nuts </div>
+                            <div style={{"fontSize":"1.5vw"}}> I’m Cindy Mo. I’m the vice-president of the RHS Coding club, and I enjoy coding and applying technology to solve problems. I participate in CTFs for fun and to challenge myself.</div>
                         </div>
                         <div className='secretary'>
                             <img style={{width:"20vw",height:"23vw", float:"right", paddingLeft:"10px"}} src="./OfficersPortrait/Secretary.png"></img>
                             <div style={{"fontSize":"2.5vw"}}>Secretary: Mana Harada</div>
-                            <div style={{"fontSize":"1.5vw"}}> deez nuts </div>
+                            <div style={{"fontSize":"1.5vw"}}>I am Mana Harada, the secretary of the RHS coding club. I enjoy biomedical engineering/genetic engineering and apply coding concepts to help me solve problems in those fields. This position will allow me to create connections with others with similar interests who I can exchange ideas with.</div>
                         </div>
                         <div className='treasure'>
                             <img style={{width:"20vw",height:"23vw", float:"right", paddingLeft:"10px"}} src="./OfficersPortrait/President.png"></img>
                             <div style={{"fontSize":"2.5vw"}}>Treasurer: Peilin Wu</div>
-                            <div style={{"fontSize":"1.5vw"}}> deez nuts </div>
+                            <div style={{"fontSize":"1.5vw"}}> I’m Peilin Wu, the current treasurer of the RHS Coding club. I enjoy the process of solving math problems and applying it to certain aspects of coding. My wish to share my interest drove me to this position in this club. </div>
                         </div>
                         <div className='historian'>
                             <img style={{width:"20vw",height:"23vw", float:"right", paddingLeft:"10px"}} src="./OfficersPortrait/Secretary.png"></img>
@@ -227,17 +227,17 @@ function Mobile(props)
                         <div className='vicePresidentMobile'>
                             <img style={{width:"60vw",height:"70vw",}} src="./OfficersPortrait/President.png"></img>
                             <div style={{"fontSize":"7vw"}}>Vice president: Cindy Mo</div>
-                            <div style={{"fontSize":"5vw"}}> deez nuts </div>
+                            <div style={{"fontSize":"5vw"}}> I’m Cindy Mo. I’m the vice-president of the RHS Coding club, and I enjoy coding and applying technology to solve problems. I participate in CTFs for fun and to challenge myself.</div>
                         </div>
                         <div className='secretaryMobile'>
                             <img style={{width:"60vw",height:"70vw"}} src="./OfficersPortrait/Secretary.png"></img>
                             <div style={{"fontSize":"7vw"}}>Secretary: Mana Harada</div>
-                            <div style={{"fontSize":"5vw"}}> deez nuts </div>
+                            <div style={{"fontSize":"5vw"}}> I am Mana Harada, the secretary of the RHS coding club. I enjoy biomedical engineering/genetic engineering and apply coding concepts to help me solve problems in those fields. This position will allow me to create connections with others with similar interests who I can exchange ideas with.</div>
                         </div>
                         <div className='treasureMobile'>
                             <img style={{width:"60vw",height:"70vw"}} src="./OfficersPortrait/President.png"></img>
                             <div style={{"fontSize":"7vw"}}>Treasurer: Peilin Wu</div>
-                            <div style={{"fontSize":"5vw"}}> deez nuts </div>
+                            <div style={{"fontSize":"5vw"}}>I’m Peilin Wu, the current treasurer of the RHS Coding club. I enjoy the process of solving math problems and applying it to certain aspects of coding. My wish to share my interest drove me to this position in this club. </div>
                         </div>
                         <div className='historianMobile'>
                             <img style={{width:"60vw",height:"70vw"}} src="./OfficersPortrait/Secretary.png"></img>
