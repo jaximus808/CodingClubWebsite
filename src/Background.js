@@ -11,7 +11,7 @@ import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPa
 import {render} from "react-dom"
 import { Plane } from '@react-three/drei';
 
-const sphere = new THREE.SphereGeometry(0.2, 25, 28)
+const sphere = new THREE.SphereGeometry(0.1, 25, 28)
 const white = new THREE.MeshLambertMaterial({ color: "white" })
 
 extend({ EffectComposer, RenderPass, UnrealBloomPass })
@@ -22,10 +22,10 @@ function Radians(degrees) {
 function Universe(props)
 {
   let rows = []; 
-  for(let i = 0; i < 30; i++)
+  for(let i = 0; i < 45; i++)
   {
     rows.push(
-      <Stars angle={i*12} scale={0.2} radius={-45} y={Math.random()*-24 - 5} z={-35}/>
+      <Stars angle={i*8} scale={0.01} radius={-45} y={Math.random()*-24 - 5} z={-35}/>
       )
   }
   return rows;
