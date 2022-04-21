@@ -29,4 +29,4 @@ app.use("/Events",express.static(path.join(__dirname,"..","build")))
 
 
 
-app.listen(3000, () =>console.log("Server up"))
+app.listen(process.env.PORT || 3000, () =>console.log("Server up"))
