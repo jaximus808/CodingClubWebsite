@@ -85,7 +85,7 @@ function Computer(props)
                 
                 <div className='WeDo'>
                     <div style={{"fontWeight":"bold", "fontSize":"3vw"} }>What we stand for</div>
-                    <div style={{"fontSize":"2vw"}}>Our club seeks to spark more creative and passionate students into the field of computer science. New members with no to little experience with programming will join the club with the goal of being able to program in a generic language. The language of choice new members will learn will be C++. Despite its difficulty relative to other languages, C++ will allow students to learn programming patterns such as for-loops, classes, and type strict variable notation. This will allow a smoother transition to other languages and will create stronger habits when programming. Those who have an understanding of programming will practice for competitions such as but not limited to hackathons and algorithm competitions. Concepts outside of programming such as Networking will also be covered using Nodejs and C++ as its tools. </div>
+                    <div style={{"fontSize":"2vw"}}>Our club seeks to spark more creative and passionate students into the field of computer science. New members with no to little experience with programming will join the club with the goal of being able to program in a generic language. The language of choice new members will learn will be C++. Despite its difficulty relative to other languages, C++ will allow students to learn programming patterns such as common syntax, data structures, and type strict variable notation. This will allow a smoother transition to other languages and will create stronger habits when programming. Those who have an understanding of programming will practice for competitions such as but not limited to hackathons and algorithm competitions. Concepts outside of programming such as Networking will also be covered using Nodejs and C++ as its tools.  </div>
                 </div>
 
                 <div className='Officers'>
@@ -97,24 +97,24 @@ function Computer(props)
                             <div style={{"fontSize":"1.5vw"}}>Hi my name is Jaxon Poentis and I am the president and founder of the Roosevelt Coding Club. I am a self-taught programmer and have spent two years learning C#, python, and other languages. I have a passion for creating things through solving problems and creativity. My outlet to do so has been through coding and I want others with simillar interests as me share ideas and create a mark on this world.</div>
                         </div>
                         <div className='vicePresident'>
-                            <img style={{width:"20vw",height:"23vw", float:"right", paddingLeft:"10px"}} src="./OfficersPortrait/President.png"></img>
+                            <img style={{width:"20vw",height:"23vw", float:"right", paddingLeft:"1vw"}} src="./OfficersPortrait/VicePresident.jpg"></img>
                             <div style={{"fontSize":"2.5vw"}}>Vice president: Cindy Mo</div>
                             <div style={{"fontSize":"1.5vw"}}> I’m Cindy Mo. I’m the vice-president of the RHS Coding club, and I enjoy coding and applying technology to solve problems. I participate in CTFs for fun and to challenge myself.</div>
                         </div>
                         <div className='secretary'>
-                            <img style={{width:"20vw",height:"23vw", float:"right", paddingLeft:"10px"}} src="./OfficersPortrait/Secretary.png"></img>
+                            <img style={{width:"20vw",height:"23vw", float:"right",paddingLeft:"1vw"}} src="./OfficersPortrait/Secretary.png"></img>
                             <div style={{"fontSize":"2.5vw"}}>Secretary: Mana Harada</div>
-                            <div style={{"fontSize":"1.5vw"}}>I am Mana Harada, the secretary of the RHS coding club. I enjoy biomedical engineering/genetic engineering and apply coding concepts to help me solve problems in those fields. This position will allow me to create connections with others with similar interests who I can exchange ideas with.</div>
+                            <div style={{"fontSize":"1.5vw",paddingRight:"2vw"}}>I am Mana Harada, the secretary of the RHS coding club. I enjoy biomedical engineering/genetic engineering and apply coding concepts to help me solve problems in those fields. This position will allow me to create connections with others with similar interests who I can exchange ideas with.</div>
                         </div>
                         <div className='treasure'>
-                            <img style={{width:"20vw",height:"23vw", float:"right", paddingLeft:"10px"}} src="./OfficersPortrait/President.png"></img>
+                            <img style={{width:"20vw",height:"23vw", float:"right", paddingLeft:"1vw"}} src="./OfficersPortrait/Treasurer.png"></img>
                             <div style={{"fontSize":"2.5vw"}}>Treasurer: Peilin Wu</div>
-                            <div style={{"fontSize":"1.5vw"}}> I’m Peilin Wu, the current treasurer of the RHS Coding club. I enjoy the process of solving math problems and applying it to certain aspects of coding. My wish to share my interest drove me to this position in this club. </div>
+                            <div style={{"fontSize":"1.5vw"}}> I’m Peilin Wu, the current treasurer of the RHS Coding club. I enjoy the process of solving math problems and applying it to certain aspects of coding. My wish to share my interests that drove me to this position in this club. </div>
                         </div>
                         <div className='historian'>
-                            <img style={{width:"20vw",height:"23vw", float:"right", paddingLeft:"10px"}} src="./OfficersPortrait/Secretary.png"></img>
+                            <img style={{width:"20vw",height:"23vw", float:"right",paddingLeft:"1vw"}} src="./OfficersPortrait/Historian.JPEG"></img>
                             <div style={{"fontSize":"2.5vw"}}>Historian: Freddie Liang</div>
-                            <div style={{"fontSize":"1.5vw"}}> deez nuts </div>
+                            <div style={{"fontSize":"1.5vw", marginRight:"2vw"}}>My name is Freddie Liang and I am the Historian of the roosvelt coding club. I enjoy tinkering with things and appraoching problems I encounter with an emperical approach. I hope I can meet more like minded individuals and together we can help create solutions for our community's problems.</div>
                         </div>
                         
                     </div>
@@ -213,7 +213,7 @@ function Mobile(props)
                 
                 <div className='WeDoMobile'>
                     <div style={{"fontWeight":"bold", "fontSize":"7vw"} }>What We Stand For</div>
-                    <div style={{"fontSize":"6vw"}}>Our club seeks to spark more creative and passionate students into the field of computer science. New members with no to little experience with programming will join the club with the goal of being able to program in a generic language. The language of choice new members will learn will be C++. Despite its difficulty relative to other languages, C++ will allow students to learn programming patterns such as for-loops, classes, and type strict variable notation. This will allow a smoother transition to other languages and will create stronger habits when programming. Those who have an understanding of programming will practice for competitions such as but not limited to hackathons and algorithm competitions. Concepts outside of programming such as Networking will also be covered using Nodejs and C++ as its tools. </div>
+                    <div style={{"fontSize":"6vw"}}>Our club seeks to spark more creative and passionate students into the field of computer science. New members with no to little experience with programming will join the club with the goal of being able to program in a generic language. The language of choice new members will learn will be C++. Despite its difficulty relative to other languages, C++ will allow students to learn programming patterns such as common syntax, data structures, and type strict variable notation. This will allow a smoother transition to other languages and will create stronger habits when programming. Those who have an understanding of programming will practice for competitions such as but not limited to hackathons and algorithm competitions. Concepts outside of programming such as Networking will also be covered using Nodejs and C++ as its tools. </div>
                 </div>
 
                 <div className='OfficersMobile'>
@@ -225,7 +225,7 @@ function Mobile(props)
                             <div style={{"fontSize":"5vw"}}>Hi my name is Jaxon Poentis and I am the president and founder of the Roosevelt Coding Club. I am a self-taught programmer and have spent two years learning C#, python, and other languages. I have a passion for creating things through solving problems and creativity. My outlet to do so has been through coding and I want others with simillar interests as me share ideas and create a mark on this world.</div>
                         </div>
                         <div className='vicePresidentMobile'>
-                            <img style={{width:"60vw",height:"70vw",}} src="./OfficersPortrait/President.png"></img>
+                            <img style={{width:"60vw",height:"70vw",}} src="./OfficersPortrait/VicePresident.jpg"></img>
                             <div style={{"fontSize":"7vw"}}>Vice president: Cindy Mo</div>
                             <div style={{"fontSize":"5vw"}}> I’m Cindy Mo. I’m the vice-president of the RHS Coding club, and I enjoy coding and applying technology to solve problems. I participate in CTFs for fun and to challenge myself.</div>
                         </div>
@@ -235,14 +235,14 @@ function Mobile(props)
                             <div style={{"fontSize":"5vw"}}> I am Mana Harada, the secretary of the RHS coding club. I enjoy biomedical engineering/genetic engineering and apply coding concepts to help me solve problems in those fields. This position will allow me to create connections with others with similar interests who I can exchange ideas with.</div>
                         </div>
                         <div className='treasureMobile'>
-                            <img style={{width:"60vw",height:"70vw"}} src="./OfficersPortrait/President.png"></img>
+                            <img style={{width:"60vw",height:"70vw"}} src="./OfficersPortrait/Treasurer.png"></img>
                             <div style={{"fontSize":"7vw"}}>Treasurer: Peilin Wu</div>
-                            <div style={{"fontSize":"5vw"}}>I’m Peilin Wu, the current treasurer of the RHS Coding club. I enjoy the process of solving math problems and applying it to certain aspects of coding. My wish to share my interest drove me to this position in this club. </div>
+                            <div style={{"fontSize":"5vw"}}>I’m Peilin Wu, the current treasurer of the RHS Coding club. I enjoy the process of solving math problems and applying it to certain aspects of coding. My wish to share my interests that drove me to this position in this club. </div>
                         </div>
                         <div className='historianMobile'>
-                            <img style={{width:"60vw",height:"70vw"}} src="./OfficersPortrait/Secretary.png"></img>
+                            <img style={{width:"60vw",height:"70vw"}} src="./OfficersPortrait/Historian.JPEG"></img>
                             <div style={{"fontSize":"7vw"}}>Historian: Freddie Liang</div>
-                            <div style={{"fontSize":"5vw"}}> deez nuts </div>
+                            <div style={{"fontSize":"5vw"}}>My name is Freddie Liang and I am the Historian of the roosvelt coding club. I enjoy tinkering with things and appraoching problems I encounter with an emperical approach. I hope I can meet more like minded individuals and together we can help create solutions for our communities problems.</div>
                         </div>
                         
                     </div>

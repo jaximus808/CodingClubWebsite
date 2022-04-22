@@ -162,7 +162,7 @@ function Mobile(props)
             
             <div style={{top:"25%"}} className='ClubTitleMobile'>
                 The Coding Club
-                <div style={{fontSize:"4vw"}}>Resources</div>
+                <div style={{fontSize:"8vw"}}>Resources</div>
             </div>
             <div ref={headerElement} className='linksMobile'>
                 <a href="/">Home</a>
