@@ -148,7 +148,7 @@ function Computer(props)
             
             <div style={{top:"25%"}} className='ClubTitle'>
                 Coding Club
-                <div style={{fontSize:"8vw"}}>Events</div>
+                <div style={{fontSize:"4vw"}}>Events</div>
             </div>
             <div ref={headerElement} className='links'>
                 <a href="/">Home</a>
