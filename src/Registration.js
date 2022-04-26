@@ -2,7 +2,7 @@ import { useFrame } from '@react-three/fiber';
 import { useState,useEffect, useRef } from 'react';
 import './Registration.css';
 import './RegistrationMobile.css'
-
+import Background from './Background';
 
 function Computer(props)
 {
@@ -65,17 +65,19 @@ function Computer(props)
                 <div style={{fontSize:"4vw"}}>Registration</div>
             </div>
             <div ref={headerElement} className='links'>
-                <a href="/">Home</a>
-                <a href="/AboutUs">About Us</a>
-                <a href="/Events">Events</a>
-                <a href="/Resources">Resources</a>
+                <a href='/CodingClub/'>Home</a>
+                <a href="/CodingClub/AboutUs">About Us</a>
+                <a href="/CodingClub/Registration">Registration</a>
+                <a href="/CodingClub/Events">Events</a>
+                <a href="/CodingClub/Resources">Resources</a>
             </div>
 
             <div ref={fixedHeaderElement} className='fixedLinks'>
-                <a href="/">Home</a>
-                <a href="/AboutUs">About Us</a>
-                <a href="/Events">Events</a>
-                <a href="/Resources">Resources</a>
+                <a href='/CodingClub/'>Home</a>
+                <a href="/CodingClub/AboutUs">About Us</a>
+                <a href="/CodingClub/Registration">Registration</a>
+                <a href="/CodingClub/Events">Events</a>
+                <a href="/CodingClub/Resources">Resources</a>
             </div>
 
             
@@ -186,17 +188,19 @@ function Mobile(props)
                 <div style={{fontSize:"8vw"}}>Registration</div>
             </div>
             <div ref={headerElement} className='linksMobile'>
-                <a href="/">Home</a>
-                <a href="/AboutUs">About Us</a>
-                <a href="/Events">Events</a>
-                <a href="/Resources">Resources</a>
+                <a href='/CodingClub/'>Home</a>
+                <a href="/CodingClub/AboutUs">About Us</a>
+                <a href="/CodingClub/Registration">Registration</a>
+                <a href="/CodingClub/Events">Events</a>
+                <a href="/CodingClub/Resources">Resources</a>
             </div>
 
             <div ref={fixedHeaderElement} className='fixedLinksMobile'>
-                <a href="/">Home</a>
-                <a href="/AboutUs">About Us</a>
-                <a href="/Events">Events</a>
-                <a href="/Resources">Resources</a>
+                <a href='/CodingClub/'>Home</a>
+                <a href="/CodingClub/AboutUs">About Us</a>
+                <a href="/CodingClub/Registration">Registration</a>
+                <a href="/CodingClub/Events">Events</a>
+                <a href="/CodingClub/Resources">Resources</a>
             </div>
 
             
@@ -252,6 +256,8 @@ export default function Registration(props)
 {
     return (
         <>
+
+<Background/>
             {( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )? <Mobile/> :<Computer/>}
             
         </>

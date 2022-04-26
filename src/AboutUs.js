@@ -3,6 +3,7 @@ import { useState,useEffect, useRef } from 'react';
 import './AboutUs.css';
 
 import './AboutUsMobile.css';
+import Background from './Background';
 
 function Computer(props)
 {
@@ -66,17 +67,21 @@ function Computer(props)
                 <div style={{fontSize:"4vw"}}>About Us</div>
             </div>
             <div ref={headerElement} className='links'>
-                <a href="/">Home</a>
-                <a href="/Registration">Registration</a>
-                <a href="/Events">Events</a>
-                <a href="/Resources">Resources</a>
+
+                <a href='/CodingClub/'>Home</a>
+                <a href="/CodingClub/AboutUs">About Us</a>
+                <a href="/CodingClub/Registration">Registration</a>
+                <a href="/CodingClub/Events">Events</a>
+                <a href="/CodingClub/Resources">Resources</a>
             </div>
 
             <div ref={fixedHeaderElement} className='fixedLinks'>
-                <a href="/">Home</a>
-                <a href="/Registration">Registration</a>
-                <a href="/Events">Events</a>
-                <a href="/Resources">Resources</a>
+
+                <a href='/CodingClub/'>Home</a>
+                <a href="/CodingClub/AboutUs">About Us</a>
+                <a href="/CodingClub/Registration">Registration</a>
+                <a href="/CodingClub/Events">Events</a>
+                <a href="/CodingClub/Resources">Resources</a>
             </div>
 
             
@@ -194,17 +199,17 @@ function Mobile(props)
                 <div style={{fontSize:"8vw"}}>About Us</div>
             </div>
             <div ref={headerElement} className='linksMobile'>
-                <a href="/">Home</a>
-                <a href="/Registration">Registration</a>
-                <a href="/Events">Events</a>
-                <a href="/Resources">Resources</a>
+                <a href="/CodingClub">Home</a>
+                <a href="/CodingClub/Registration">Registration</a>
+                <a href="/CodingClub/Events">Events</a>
+                <a href="/CodingClub/Resources">Resources</a>
             </div>
 
             <div ref={fixedHeaderElement} className='fixedLinksMobile'>
-                <a href="/">Home</a>
-                <a href="/Registration">Registration</a>
-                <a href="/Events">Events</a>
-                <a href="/Resources">Resources</a>
+                <a href="/CodingClub">Home</a>
+                <a href="/CodingClub/Registration">Registration</a>
+                <a href="/CodingClub/Events">Events</a>
+                <a href="/CodingClub/Resources">Resources</a>
             </div>
 
             
@@ -235,7 +240,7 @@ function Mobile(props)
                             <div style={{"fontSize":"5vw"}}> I am Mana Harada, the secretary of the RHS coding club. I enjoy biomedical engineering/genetic engineering and apply coding concepts to help me solve problems in those fields. This position will allow me to create connections with others with similar interests who I can exchange ideas with.</div>
                         </div>
                         <div className='treasureMobile'>
-                            <img style={{width:"60vw",height:"70vw"}} src="./OfficersPortrait/Treasurer.png"></img>
+                            <img style={{width:"60vw",height:"70vw"}} src="./OfficersPortrait/Treasurer.jpg"></img>
                             <div style={{"fontSize":"7vw"}}>Treasurer: Peilin Wu</div>
                             <div style={{"fontSize":"5vw"}}>I’m Peilin Wu, the current treasurer of the RHS Coding club. I enjoy the process of solving math problems and applying it to certain aspects of coding. My wish to share my interests that drove me to this position in this club. </div>
                         </div>
@@ -263,6 +268,7 @@ export default function AboutUs(props)
 {
     return (
         <>
+        <Background/>
             {( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )? <Mobile/> :<Computer/>}
             
         </>

@@ -7,6 +7,8 @@ import AboutUs from "./AboutUs"
 import Registration from "./Registration"
 import Events from './Events';
 import Resources from './Resources';
+import Opening from './Opening';
+import RoboticsMain from "./RoboticsMain"
 import {
   BrowserRouter as Router,
   Routes,
@@ -18,12 +20,14 @@ import {
 function RouteWrapper()
 {
   let routes = useRoutes([
-    {path:"/", element:<Main/>},
-    {path:"/Info", element:<Info/>},
-    {path:"/AboutUs", element:<AboutUs/>},
-    {path:"/Registration", element:<Registration/>},
-    {path:"/Events", element:<Events/>},
-    {path:"/Resources", element:<Resources/>},
+    {path:"/", element:<Opening/>},
+    {path:"/CodingClub", element:<Main/>},
+    {path:"/CodingClub/Info", element:<Info/>},
+    {path:"/CodingClub/AboutUs", element:<AboutUs/>},
+    {path:"/CodingClub/Registration", element:<Registration/>},
+    {path:"/CodingClub/Events", element:<Events/>},
+    {path:"/CodingClub/Resources", element:<Resources/>},
+    {path:"/RoboticsClub", element:<RoboticsMain/>}
 
   ])
   return routes; 
@@ -33,7 +37,6 @@ function App() {
   return (
     <>
 
-<Background/>
     <Router>
         <RouteWrapper></RouteWrapper>
     </Router>

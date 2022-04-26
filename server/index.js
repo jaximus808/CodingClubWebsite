@@ -21,11 +21,15 @@ app.use("/api/forms", require("./routes/forms"));
 
 app.use("/",express.static(path.join(__dirname,"..","build")))
 
-app.use("/Resources",express.static(path.join(__dirname,"..","build")))
-app.use("/AboutUs",express.static(path.join(__dirname,"..","build")))
+app.use("/CodingClub",express.static(path.join(__dirname,"..","build")))
 
-app.use("/Registration",express.static(path.join(__dirname,"..","build")))
-app.use("/Events",express.static(path.join(__dirname,"..","build")))
+app.use("/CodingClub/Resources",express.static(path.join(__dirname,"..","build")))
+app.use("/CodingClub/AboutUs",express.static(path.join(__dirname,"..","build")))
+
+app.use("/CodingClub/Registration",express.static(path.join(__dirname,"..","build")))
+app.use("/CodingClub/Events",express.static(path.join(__dirname,"..","build")))
+
+app.use("/Robotics/",express.static(path.join(__dirname,"..","build")))
 
 
 

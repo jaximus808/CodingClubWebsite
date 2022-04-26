@@ -2,10 +2,10 @@ body{
     overflow-x: hidden;
 }
 
-canvas {
+.backgroundCanvas {
     width: 100vw;
     height: 100vh;
-    background-color: #141414;
     z-index: -3;
+    background-image: linear-gradient(to bottom, #05367a, #322354, #2f1632, #1f0d18, #000000)
   }
 
