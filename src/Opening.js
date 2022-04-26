@@ -53,15 +53,15 @@ function Mobile(props)
                 <div style={{fontSize:"8vw"}}>Clubs</div>
             </div>
 
-            <div style={{"zIndex":"-2", backgroundImage: "linear-gradient(to bottom, #05367a, #322354, #2f1632, #1f0d18, #000000)", position:"absolute", "top":"0", "left":"50%", height:"100%","width":"50%"} }>
+            <div style={{"zIndex":"-2", backgroundImage: "linear-gradient(to bottom, #05367a, #322354, #2f1632, #1f0d18, #000000)", position:"absolute", "top":"0", "left":"50%", height:"200vw","width":"50%"} }>
 
             </div>
-            <div style={{"zIndex":"-2", backgroundImage: "linear-gradient(to bottom, #c87c1b, #af4d3f, #78354a, #3b2639, #111111)", position:"absolute", "top":"0", "right":"50%", height:"100%","width":"50%"} }>
+            <div style={{"zIndex":"-2", backgroundImage: "linear-gradient(to bottom, #c87c1b, #af4d3f, #78354a, #3b2639, #111111)", position:"absolute", "top":"0", "right":"50%", height:"200vw","width":"50%"} }>
 
             </div>
 
-            <a href='/CodingClub' className={"codingEnter"}>The Coding Club</a>
-            <a href='/RoboticsClub' className={"RoboticsEnter"}>The Robotics Club</a>
+            <a href='/CodingClub' className={"codingEnterMobile"}>The Coding Club</a>
+            <a href='/RoboticsClub' className={"RoboticsEnterMobile"}>The Robotics Club</a>
             
         </>
         

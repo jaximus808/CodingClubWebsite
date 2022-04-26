@@ -383,9 +383,10 @@ function Mobile(props)
             </div>
 
             <div ref={fixedHeaderElement} className='fixedLinksMobile'>
-                <a href="/CodingClub">Home</a>
+                <a href='/CodingClub/'>Home</a>
                 <a href="/CodingClub/AboutUs">About Us</a>
                 <a href="/CodingClub/Registration">Registration</a>
+                <a href="/CodingClub/Events">Events</a>
                 <a href="/CodingClub/Resources">Resources</a>
             </div>
 

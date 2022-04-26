@@ -29,6 +29,39 @@
   border:none;
 }
 
+.codingEnterMobile
+{
+    position: absolute;
+    top:100vw;
+    left:75%;
+    transform: translate(-50%,0);
+    font-size: 8vw;
+    padding: 1vw;
+    padding-top:0.5vw;
+    padding-bottom:0.5vw;
+    font-family: 'Teko', sans-serif;
+    color:white;
+    border:none;
+    text-align: center;
+
+}
+
+.RoboticsEnterMobile
+{
+  position: absolute;
+  top:100vw;
+  right:75%;
+  transform: translate(50%,0);
+  font-size: 8vw;
+  padding: 1vw;
+  padding-top:0.5vw;
+  padding-bottom:0.5vw;
+  font-family: 'Teko', sans-serif;
+  color:white;
+  border:none;
+
+  text-align: center;
+}
 /* CSS */
 /* .button-87 {
   margin: 10px;

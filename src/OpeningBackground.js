@@ -97,17 +97,68 @@ function Box(props)
       </mesh>
   )
 }
+function Mobile(props) {
+
+  const [xPos,setXPos] = useState(0.01*window.innerWidth)
+
+  const [scalewrench,setScale] = useState(0.002*window.innerWidth)
+  
+  const handleResize = () =>
+  {
+    setXPos(0.01*window.innerWidth)
+    setScale(0.002*window.innerWidth)
+  }
 
 
-function OpeningBackground(props) {
+  
+  useEffect(() =>
+  {
 
-    const [xPos,setXPos] = useState(0.008*window.innerWidth)
-
-    const handleResize = () =>
+    window.addEventListener("resize", handleResize)
+    return () =>
     {
-      setXPos(0.008*window.innerWidth)
+        window.removeEventListener("scroll", handleResize)
     }
 
+  },[])
+
+  return (
+      <div className='BackgroundCanvas'>
+          <Canvas frameloop="demand" style={{position:"fixed"}}  camera={{ zoom: 10, position: [0, 20, 100] }}>
+            
+            <ambientLight intensity={0.1}></ambientLight>
+            <pointLight intensity={0.4} color="#cc00cc"position={[10, 10, -10]} />
+
+            <pointLight intensity={0.4} color="lightblue" position={[-10, 10, 10]} />
+
+              <Suspense fallback={null}>
+
+              <Box pos={[0,0,-10]}/>
+              <Triangle1 castShadow scale={0.4} position={[xPos,-10,-60]} />
+              <Triangle1 castShadow scale={0.15} position={[xPos,-10.2,-60]} />
+                <Robotics castShadow scale={[2*scalewrench,0.8*scalewrench,2*scalewrench]} position={[-xPos,-10,-60]}/>
+                <Robotics castShadow scale={[1.5*scalewrench,0.8*scalewrench,1.5*scalewrench]} position={[-xPos,-10,-60]}/>
+              </Suspense>
+          </Canvas>
+      </div>
+  )
+}
+
+
+function MobileBack(props) {
+
+    const [xPos,setXPos] = useState(0.01*window.innerWidth)
+
+    const [scalewrench,setScale] = useState(0.002*window.innerWidth)
+    
+    const handleResize = () =>
+    {
+      setXPos(0.01*window.innerWidth)
+      setScale(0.002*window.innerWidth)
+    }
+
+
+    
     useEffect(() =>
     {
 
@@ -131,14 +182,64 @@ function OpeningBackground(props) {
                 <Suspense fallback={null}>
 
                 <Box pos={[0,0,-10]}/>
-                <Triangle1 castShadow scale={0.4} position={[xPos,-10,-60]} />
-                <Triangle1 castShadow scale={0.15} position={[xPos,-10.2,-60]} />
-                  <Robotics castShadow scale={[2,0.8,2]} position={[-xPos,-10,-60]}/>
-                  <Robotics castShadow scale={[1.5,0.8,1.5]} position={[-xPos,-10,-60]}/>
+                <Triangle1 castShadow scale={0.4*scalewrench} position={[xPos,-10,-60]} />
+                <Triangle1 castShadow scale={0.15*scalewrench} position={[xPos,-10.2,-60]} />
+                  <Robotics castShadow scale={[2*scalewrench,0.8*scalewrench,2*scalewrench]} position={[-xPos,-10,-60]}/>
+                  <Robotics castShadow scale={[1.5*scalewrench,0.8*scalewrench,1.5*scalewrench]} position={[-xPos,-10,-60]}/>
                 </Suspense>
             </Canvas>
         </div>
     )
 }
 
-export default OpeningBackground
+function ComputerBack(props) {
+
+  const [xPos,setXPos] = useState(0.008*window.innerWidth)
+
+  const handleResize = () =>
+  {
+    setXPos(0.008*window.innerWidth)
+  }
+
+  useEffect(() =>
+  {
+
+    window.addEventListener("resize", handleResize)
+    return () =>
+    {
+        window.removeEventListener("scroll", handleResize)
+    }
+
+  },[])
+
+  return (
+      <div className='BackgroundCanvas'>
+          <Canvas frameloop="demand" style={{position:"fixed"}}  camera={{ zoom: 10, position: [0, 20, 100] }}>
+            
+            <ambientLight intensity={0.1}></ambientLight>
+            <pointLight intensity={0.4} color="#cc00cc"position={[10, 10, -10]} />
+
+            <pointLight intensity={0.4} color="lightblue" position={[-10, 10, 10]} />
+
+              <Suspense fallback={null}>
+
+              <Box pos={[0,0,-10]}/>
+              <Triangle1 castShadow scale={0.4} position={[xPos,-10,-60]} />
+              <Triangle1 castShadow scale={0.15} position={[xPos,-10.2,-60]} />
+                <Robotics castShadow scale={[2,0.8,2]} position={[-xPos,-10,-60]}/>
+                <Robotics castShadow scale={[1.5,0.8,1.5]} position={[-xPos,-10,-60]}/>
+              </Suspense>
+          </Canvas>
+      </div>
+  )
+}
+
+export default function OpeningBackground()
+{
+  return(
+    <>
+                {( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )? <MobileBack/> :<ComputerBack/>}
+            
+    </>
+  )
+}
