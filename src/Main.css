@@ -2,26 +2,23 @@
 
 .ClubTitle
 {
-    position: absolute;
-    left:50%;
-    top:30%;
-    transform: translate(-50%, 0);
     font-size: 9vw;
-    width:100%;
     text-align: center;
     color:white;
     font-family: 'Orbitron', sans-serif;
-
+    grid-column-start: 2;
+    grid-column-end:20;
+    grid-row-start: 2;
+    grid-row-end: 3;
 }
 
 .links
 {
-    position: absolute;
-    left:50%;
-    top:80%;
-    transform: translate(-50%, 0);
+    grid-column-start: 2;
+    grid-column-end:20;
+    grid-row-start: 5;
+    grid-row-end: 6;
     font-size: 2.5vw;
-    width:50%;
     text-align: center;
     font-family: 'Teko', sans-serif;
     z-index:5;
@@ -64,9 +61,8 @@
     display: grid;
     justify-content: space-evenly;
     grid-template-columns:repeat(20,5%);
-    grid-template-rows:repeat(17,10vw);
+    grid-template-rows:repeat(23,10vw);
     position:absolute;
-    top:100%;
     width:100%;
     
 }
@@ -83,8 +79,8 @@
     background-color: rgba(255, 255, 255,0.9);
     grid-column-start: 2;
     grid-column-end:20;
-    grid-row-start: 15;
-    grid-row-end: 17;
+    grid-row-start: 17;
+    grid-row-end: 19;
     padding: 1vw;
     float: right;
     font-family: 'Teko', sans-serif;
@@ -96,8 +92,8 @@
     background-color: rgba(255, 255, 255,0.9);
     grid-column-start: 2;
     grid-column-end:12;
-    grid-row-start: 1;
-    grid-row-end: 5;
+    grid-row-start: 7;
+    grid-row-end: 11;
     padding: 1vw;
     float: right;
     font-family: 'Teko', sans-serif;
@@ -109,8 +105,8 @@
     background-color: rgba(255, 255, 255,0.9);;
     grid-column-start: 2;
     grid-column-end:5;
-    grid-row-start: 6;
-    grid-row-end: 10;
+    grid-row-start: 12;
+    grid-row-end: 16;
     padding: 1vw;
     float: right;
     font-family: 'Teko', sans-serif;
@@ -122,8 +118,8 @@
     background-color: rgba(255, 255, 255,0.9);;
     grid-column-start: 7;
     grid-column-end:20;
-    grid-row-start: 6;
-    grid-row-end: 10;
+    grid-row-start: 12;
+    grid-row-end: 16;
     padding: 1vw;
     float: right;
     font-family: 'Teko', sans-serif;
@@ -135,8 +131,8 @@
     background-color: rgba(255, 255, 255,0.9);;
     grid-column-start: 2;
     grid-column-end:20;
-    grid-row-start: 11;
-    grid-row-end: 14;
+    grid-row-start: 20;
+    grid-row-end: 22;
     padding: 1vw;
     float: right;
     font-family: 'Teko', sans-serif;
@@ -148,8 +144,8 @@
     background-color: rgba(255, 255, 255,0.9);;
     grid-column-start: 15;
     grid-column-end:20;
-    grid-row-start: 1;
-    grid-row-end: 5;
+    grid-row-start: 7;
+    grid-row-end: 11;
     padding: 1vw;
     float: right;
     font-family: 'Teko', sans-serif;
@@ -161,8 +157,8 @@
     background-color: #143F6B;
     grid-column-start: 1;
     grid-column-end:21;
-    grid-row-start: 20;
-    grid-row-end: 21;
+    grid-row-start: 23;
+    grid-row-end: 24;
     padding: 1vw;
     float: right;
     font-family: 'Teko', sans-serif;

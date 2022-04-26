@@ -3,9 +3,8 @@
 .ClubTitleMobile
 {
     position: absolute;
-    left:50%;
-    top:20%;
-    transform: translate(-50%, 0);
+    grid-row-start: 5;
+    grid-row-end: 6;
     font-size: 15vw;
     width:100%;
     text-align: center;
@@ -17,9 +16,8 @@
 .linksMobile
 {
     position: absolute;
-    left:50%;
-    top:60%;
-    transform: translate(-50%, 0);
+    grid-row-start: 12;
+    grid-row-end: 14;
     font-size: 6vw;
     width:100%;
     text-align: center;
@@ -41,7 +39,7 @@
     left:50%;
     top:-10vw;
     transform: translate(-50%, 0);
-    font-size: 7vw;
+    font-size: 6vw;
     width:50%;
     text-align: center;
     font-family: 'Teko', sans-serif;
@@ -64,9 +62,8 @@
     display: grid;
     justify-content: space-evenly;
     grid-template-columns:repeat(20,5%);
-    grid-template-rows:repeat(100,10vw);
+    grid-template-rows:repeat(125,10vw);
     position:absolute;
-    top:100%;
     width:100%;
     
 }
@@ -83,8 +80,8 @@
     background-color: rgba(255, 255, 255,0.9);
     grid-column-start: 2;
     grid-column-end:20;
-    grid-row-start: 17;
-    grid-row-end: 24;
+    grid-row-start: 95;
+    grid-row-end: 103;
     padding: 1vw;
     padding-right: 5vw;
     float: right;
@@ -98,8 +95,8 @@
     background-color: rgba(255, 255, 255,0.9);
     grid-column-start: 2;
     grid-column-end:20;
-    grid-row-start: 1;
-    grid-row-end: 16;
+    grid-row-start: 20;
+    grid-row-end: 35;
     padding: 1vw;
     float: right;
     font-family: 'Teko', sans-serif;
@@ -111,8 +108,8 @@
     background-color: rgba(255, 255, 255,0.9);;
     grid-column-start: 2;
     grid-column-end:20;
-    grid-row-start: 52;
-    grid-row-end: 57;
+    grid-row-start: 67;
+    grid-row-end: 72;
     padding: 1vw;
     float: right;
     font-family: 'Teko', sans-serif;
@@ -129,8 +126,8 @@
     grid-column-start: 2;
     text-align: center;
     grid-column-end:20;
-    grid-row-start: 25;
-    grid-row-end: 51;
+    grid-row-start: 37;
+    grid-row-end: 66;
     padding: 1vw;
     float: right;
     font-family: 'Teko', sans-serif;
@@ -142,8 +139,8 @@
     background-color: rgba(255, 255, 255,0.9);;
     grid-column-start: 2;
     grid-column-end:20;
-    grid-row-start: 58;
-    grid-row-end: 74;
+    grid-row-start: 106;
+    grid-row-end: 117;
     padding: 1vw;
     float: right;
     font-family: 'Teko', sans-serif;
@@ -168,8 +165,8 @@
     background-color: #143F6B;
     grid-column-start: 1;
     grid-column-end:21;
-    grid-row-start: 95;
-    grid-row-end: 102;
+    grid-row-start: 119;
+    grid-row-end: 126;
     padding: 1vw;
     float: right;
     font-family: 'Teko', sans-serif;

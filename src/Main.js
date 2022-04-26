@@ -105,6 +105,11 @@ function Computer(props)
             @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Teko&display=swap');
             </style> 
             
+            
+
+            
+
+            <div className='container' style={{position:'absolute',color:"white"}}>
             <div  className='ClubTitle'>
                 The Coding Club
                 <div style={{fontSize:"4vw"}}>Roosevelt Highschool</div>
@@ -126,10 +131,6 @@ function Computer(props)
                 <a href="/CodingClub/Events">Events</a>
                 <a href="/CodingClub/Resources">Resources</a>
             </div>
-
-            
-
-            <div className='container' style={{position:'absolute',color:"white"}}>
                 <div className='doing'>
                     <span style={{"fontWeight":"bold", "fontSize":"3vw"} }>What is the Coding Club?</span>
                     <div style={{"padding":"1vw", "font-size":"1.7vw"}} > 
@@ -177,7 +178,7 @@ function Computer(props)
                 </div>
                 <div className='Meeting'>
                 <div style={{"fontWeight":"bold", "fontSize":"3vw"} }>Where Do We Meet?</div>
-                <div style={{"padding":"1vw", "font-size":"1.7vw"}} >
+                <div style={{"padding":"1vw", "font-size":"1.5vw"}} >
                 <img style={{"width":"50%", "float":"right", "padding-left":"20px"}} src='./ROOM.JPG'></img>The Coding Club meets Tuesdays and Thursdays afterschool in room F103 with meetings lasting 1-2 hours. We will have different activities for students based on their ability and interests. Students new to programming will learn the aspects of computer science and coding principles. Those with experience will focus on creating projects in fields they are interested in such as webapps or machine learning projects. Outside of school, the club will use discord as the main method of communication with events being posted on discord and this website. Most competitions will be online so those will either be completed at home or at school. Any In-person competitions will require a parent signature. If any events, online or in-person, interfere with school hours then teacher and principal signatures will also be required.</div>
                 </div>
 
@@ -309,6 +310,9 @@ function Mobile(props)
             @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Teko&display=swap');
             </style> 
             
+
+            <div className='containerMobile' style={{position:'absolute',color:"white"}}>
+
             <div  className='ClubTitleMobile'>
                 The Coding Club
                 <div style={{fontSize:"6vw"}}>Roosevelt Highschool</div>
@@ -332,8 +336,6 @@ function Mobile(props)
             </div>
 
             
-
-            <div className='containerMobile' style={{position:'absolute',color:"white"}}>
                 <div className='doingMobile'>
                     <span style={{"fontWeight":"bold",textAlign:"center",  "fontSize":"10vw"} }>What is the Coding Club?</span>
                     <div style={{"padding":"1vw", "font-size":"5vw"}} > 
