@@ -1,4 +1,7 @@
-
+body
+{
+    background-color: black;
+}
 
 .ClubTitle
 {
@@ -171,4 +174,45 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+.LowPowerMode
+{
+    position: fixed;
+    right:1vw;
+    top:0.1vw;
+    text-align: center;
+    z-index: 100;
+    font-size: 1vw;
+
+    font-family: 'Teko', sans-serif;
+}
+.LowPowerButton
+{
+    border: white 0.2vw solid;
+    width: 2.5vw;
+    height: 2.5vw;
+   
+    border-radius: 100%;
+    background-color: rgba(0,0,0,0);
+}
+.LowPowerButton:hover
+{
+    cursor: pointer;
+    background-color: rgba(255,255,255,0.5);
+}
+
+.LowPowerButtonOn
+{
+    border: white 0.2vw solid;
+    width: 2.5vw;
+    height: 2.5vw;
+   
+    border-radius: 100%;
+    background-color: rgba(255,255,255,0.95);
+}
+
+.LowPowerButtonOn:hover
+{
+    cursor: pointer;
+    background-color: rgba(255,255,255,0.5);
 }

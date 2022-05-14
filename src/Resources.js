@@ -3,6 +3,7 @@ import { useState,useEffect, useRef } from 'react';
 import './Resources.css';
 import './ResourcesMobile.css'
 import Background from './Background';
+import LowPowerBack from './LowPowerBack';
 
 function Computer(props)
 {
@@ -11,6 +12,15 @@ function Computer(props)
     const headerElement = useRef(null);
     const fixedHeaderElement = useRef(null); 
 
+    const powerState = useRef(false)
+
+    const [lowPower, setLowPower] = useState(false)
+    const handleLowPower = () =>
+    {
+        localStorage.setItem("lowPower", !lowPower)
+        console.log(localStorage.getItem("lowPower"))
+        setLowPower(!lowPower)
+    }
     const showFixed =() =>
     {
         fixedHeaderElement.current.style.top = "0";
@@ -41,7 +51,19 @@ function Computer(props)
     {
         window.addEventListener("scroll", handleScroll)
         
-        
+        const saved = localStorage.getItem("lowPower");
+        console.log(saved)
+        if(saved === undefined) 
+        {
+            localStorage.setItem("lowPower", false)
+            setLowPower(false)
+            console.log("??")
+        }
+        else
+        {
+            setLowPower(saved === "true")
+            console.log(lowPower)
+        }
 
         return () =>
         {
@@ -53,6 +75,7 @@ function Computer(props)
 
     return(
         <>
+            {(lowPower) ? <Background/>:<LowPowerBack/>}
             <style>
                 @import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
             </style> 
@@ -60,17 +83,7 @@ function Computer(props)
             @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Teko&display=swap');
             </style> 
             
-            <div style={{top:"25%"}} className='ClubTitle'>
-                The Coding Club
-                <div style={{fontSize:"4vw"}}>Resources</div>
-            </div>
-            <div ref={headerElement} className='links'>
-                <a href='/CodingClub/'>Home</a>
-                <a href="/CodingClub/AboutUs">About Us</a>
-                <a href="/CodingClub/Registration">Registration</a>
-                <a href="/CodingClub/Events">Events</a>
-                <a href="/CodingClub/Resources">Resources</a>
-            </div>
+            
 
             <div ref={fixedHeaderElement} className='fixedLinks'>
                 <a href='/CodingClub/'>Home</a>
@@ -83,6 +96,21 @@ function Computer(props)
             
 
             <div className='containerResources' style={{position:'absolute',color:"white"}}>
+                <div style={{top:"25%"}} className='ClubTitle'>
+                    The Coding Club
+                    <div style={{fontSize:"4vw"}}>Resources</div>
+                </div>
+                <div className='LowPowerMode'>
+                <div>Low Power Mode</div>
+                <button onClick={handleLowPower} className={`${(!lowPower) ? "LowPowerButtonOn": "LowPowerButton" }`}></button>
+            </div>
+                <div ref={headerElement} className='links'>
+                    <a href='/CodingClub/'>Home</a>
+                    <a href="/CodingClub/AboutUs">About Us</a>
+                    <a href="/CodingClub/Registration">Registration</a>
+                    <a href="/CodingClub/Events">Events</a>
+                    <a href="/CodingClub/Resources">Resources</a>
+                </div>
                 <div className='FormLinks'>
                     <div style={{"fontWeight":"bold", "textAlign":"center","fontSize":"3.5vw"}}>Forms and Documents</div>   
                     <div style={{"textAlign":"center"}}>
@@ -161,19 +189,7 @@ function Mobile(props)
             <style>
             @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Teko&display=swap');
             </style> 
-            
-            <div style={{top:"25%"}} className='ClubTitleMobile'>
-                The Coding Club
-                <div style={{fontSize:"8vw"}}>Resources</div>
-            </div>
-            <div ref={headerElement} className='linksMobile'>
-                <a href='/CodingClub/'>Home</a>
-                <a href="/CodingClub/AboutUs">About Us</a>
-                <a href="/CodingClub/Registration">Registration</a>
-                <a href="/CodingClub/Events">Events</a>
-                <a href="/CodingClub/Resources">Resources</a>
-            </div>
-
+           
             <div ref={fixedHeaderElement} className='fixedLinksMobile'>
                 <a href='/CodingClub/'>Home</a>
                 <a href="/CodingClub/AboutUs">About Us</a>
@@ -185,6 +201,17 @@ function Mobile(props)
             
 
             <div className='containerResourcesMobile' style={{position:'absolute',color:"white"}}>
+                <div style={{top:"25%"}} className='ClubTitleMobile'>
+                    The Coding Club
+                    <div style={{fontSize:"8vw"}}>Resources</div>
+                </div>
+                <div ref={headerElement} className='linksMobile'>
+                    <a href='/CodingClub/'>Home</a>
+                    <a href="/CodingClub/AboutUs">About Us</a>
+                    <a href="/CodingClub/Registration">Registration</a>
+                    <a href="/CodingClub/Events">Events</a>
+                    <a href="/CodingClub/Resources">Resources</a>
+                </div>
                 <div className='FormLinksMobile'>
                     <div style={{"fontWeight":"bold", "textAlign":"center","fontSize":"8vw"}}>Forms and Documents</div>   
                     <div style={{"textAlign":"center"}}>
@@ -214,7 +241,6 @@ export default function Registration(props)
 {
     return (
         <>
-        <Background/>
             {( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )? <Mobile/> :<Computer/>}
             
         </>

@@ -3,7 +3,7 @@ import { useState,useEffect, useRef } from 'react';
 import './Main.css';
 import Background from './Background';
 import './MainMobile.css';
-
+import LowPowerBack from './LowPowerBack';
 
 function Computer(props)
 {
@@ -22,6 +22,15 @@ function Computer(props)
     const moved = useRef(false)
     const headerElement = useRef(null);
     const fixedHeaderElement = useRef(null); 
+
+    const [lowPower, setLowPower] = useState(false)
+
+    const handleLowPower = () =>
+    {
+        localStorage.setItem("lowPower", !lowPower)
+        console.log(localStorage.getItem("lowPower"))
+        setLowPower(!lowPower)
+    }
 
     const showFixed =() =>
     {
@@ -55,7 +64,22 @@ function Computer(props)
         
         const y = window.pageYOffset;
         yRef.current = y;
-        
+        const saved = localStorage.getItem("lowPower");
+        console.log(saved)
+        if(saved === undefined) 
+        {
+            localStorage.setItem("lowPower", false)
+            setLowPower(false)
+            console.log("??")
+        }
+        else
+        {
+            setLowPower(saved === "true")
+            console.log(lowPower)
+        }
+
+
+
         try{
             fetch(`${window.location.protocol}//${window.location.host}/api/getRecentEvent`, {
             method:"GET",
@@ -98,6 +122,8 @@ function Computer(props)
 
     return(
         <>
+
+            <>{(!lowPower) ?<LowPowerBack/>:<Background/>}</>
             <style>
                 @import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
             </style> 
@@ -113,6 +139,10 @@ function Computer(props)
             <div  className='ClubTitle'>
                 The Coding Club
                 <div style={{fontSize:"4vw"}}>Roosevelt Highschool</div>
+            </div>
+            <div className='LowPowerMode'>
+                <div>Low Power Mode</div>
+                <button onClick={handleLowPower} className={`${(!lowPower) ? "LowPowerButtonOn": "LowPowerButton" }`}></button>
             </div>
             <div ref={headerElement} className='links'>
 
@@ -202,7 +232,7 @@ function Computer(props)
                 </div>
 
                 <div className='BottomBase'>
-                    <div style={{"fontSize":"1.3vw"}}>This Website was made by Jaxon Poentis, the Jaxon Poentis, and is powered by React and Expressjs using Nodejs as the runtime enviornment. All <a style={{color:"white"}} target="_blank" href='https://github.com/jaximus808/CodingClubWebsite'>Source Code</a>, exclduing modules, are written entirely by the President of this club. Any similarities in design are purely coincidental. Any information or images of members and officers are used with consent. Information about this can be found more in our resources page. </div>
+                    <div style={{"fontSize":"1.3vw"}}>This Website was made by Jaxon Poentis, the President of the Coding Club, and is powered by React and Expressjs using Nodejs as the runtime enviornment. All <a style={{color:"white"}} target="_blank" href='https://github.com/jaximus808/CodingClubWebsite'>Source Code</a>, exclduing modules, are written entirely by Jaxon Poentis. Any similarities in design are purely coincidental. Any information or images of members and officers are used with consent. Information about this can be found more in our resources page. </div>
                     <img style={{"width":"4.5vw","height":"4.5vw"}} src='./codingClubLogo.png'></img>
                 </div>
             </div>
@@ -227,6 +257,15 @@ function Mobile(props)
     const moved = useRef(false)
     const headerElement = useRef(null);
     const fixedHeaderElement = useRef(null); 
+
+    const [lowPower, setLowPower] = useState(false)
+
+
+    const handleLowPower = () =>
+    {
+        localStorage.setItem("lowPower", !lowPower)
+        setLowPower(!lowPower)  
+    }
 
     const showFixed =() =>
     {
@@ -260,7 +299,19 @@ function Mobile(props)
         
         const y = window.pageYOffset;
         yRef.current = y;
-        
+        const saved = localStorage.getItem("lowPower");
+        console.log(saved)
+        if(saved === undefined) 
+        {
+            localStorage.setItem("lowPower", false)
+            setLowPower(false)
+            console.log("??")
+        }
+        else
+        {
+            setLowPower(saved === "true")
+            console.log(lowPower)
+        }
         try{
             fetch(`${window.location.protocol}//${window.location.host}/api/getRecentEvent`, {
             method:"GET",
@@ -303,6 +354,8 @@ function Mobile(props)
 
     return(
         <>
+        
+            {(!lowPower) ?<LowPowerBack/>:<Background/>}    
             <style>
                 @import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
             </style> 
@@ -310,9 +363,12 @@ function Mobile(props)
             @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Teko&display=swap');
             </style> 
             
-
+            
             <div className='containerMobile' style={{position:'absolute',color:"white"}}>
-
+            <div className='LowPowerModeMobile'>
+                <div>Low Power Mode</div>
+                <button onClick={handleLowPower} className={`${(!lowPower) ? "LowPowerButtonOnMobile": "LowPowerButtonMobile" }`}></button>
+            </div>
             <div  className='ClubTitleMobile'>
                 The Coding Club
                 <div style={{fontSize:"6vw"}}>Roosevelt Highschool</div>
@@ -421,8 +477,6 @@ export default function Main(props)
    
     return (
         <>
-
-        <Background/>
             {( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )? <Mobile/> :<Computer/>}
             
         </>

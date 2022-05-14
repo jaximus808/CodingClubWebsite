@@ -7,14 +7,11 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { OrbitControls, useGLTF } from '@react-three/drei'
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer'
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass'
-import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass'
-import {render} from "react-dom"
-import { Plane } from '@react-three/drei';
+
 
 const sphere = new THREE.SphereGeometry(0.1, 25, 28)
 const white = new THREE.MeshLambertMaterial({ color: "white" })
 
-extend({ EffectComposer, RenderPass, UnrealBloomPass })
 function Radians(degrees) {
   return degrees * Math.PI / 180
 }
@@ -85,30 +82,6 @@ function Stars(props)
 
 
 
-function Triangle(props) {
-    const group = useRef()
-    const { nodes, materials } = useGLTF('/triangle/scene.gltf')
-    
-    const [Yrotation, setYRotation] = useState(0); 
-
-    useFrame((state, delta) =>
-    {
-      setYRotation(Yrotation+0.01); 
-    })
-
-    return (
-        <group castShadow={true} ref={group} position={props.pos} rotation={[0.693571513,2.04360602,-0.74442306855]} scale={props.scale}  dispose={null}>
-        <group position={[0.06, -0.06, 0]} rotation={[-Math.PI / 2, -0.01, 0]} scale={0.13}>
-            <group position={[-1, -1, -1]}>
-            <mesh geometry={nodes.Object_3.geometry} material={materials['Material.001']} />
-            <mesh geometry={nodes.Object_4.geometry} material={materials['Material.002']} />
-            <mesh geometry={nodes.Object_5.geometry} material={materials['Material.003']} />
-            </group>
-        </group>
-        </group>
-    )
-    }
-
 function Triangle1({ ...props }) {
   const group = useRef()
   const [Yrotation, setYRotation] = useState(0); 
@@ -135,31 +108,6 @@ function Triangle1({ ...props }) {
   )
 }
 
-function Triangle2({ ...props }) {
-  const group = useRef()
-  const [Yrotation, setYRotation] = useState(0); 
-
-  const [Xrotation, setXRotation] = useState(0); 
-
-  const [Zrotation, setZRotation] = useState(0); 
-
-    useFrame((state, delta) =>
-    {
-      setYRotation(Yrotation+0.02);
-      setXRotation(Xrotation+0.001);
-      setZRotation(Zrotation+0.001); 
-      if(Yrotation > 2*Math.PI) setYRotation(Yrotation -2*Math.PI)
-      if(Xrotation > 2*Math.PI) setXRotation(Xrotation -2*Math.PI)
-      if(Zrotation > 2*Math.PI) setZRotation(Zrotation -2*Math.PI)
-
-    })
-  const { nodes, materials } = useGLTF('/triangletwo/Triangle1.gltf')
-  return (
-    <group ref={group} rotation={[Xrotation, Yrotation, Zrotation]}{...props} dispose={null}>
-      <mesh geometry={nodes.Cube.geometry} material={materials['Material.005']} />
-    </group>
-  )
-}
 
 function Box(props)
 {
@@ -196,7 +144,7 @@ function Box(props)
 function Background(props) {
     return (
         <div className='BackgroundCanvas'>
-            <Canvas className ="backgroundCanvas" frameloop="demand" style={{position:"fixed"}}  camera={{ zoom: 10, position: [0, 20, 100] }}>
+            <Canvas  className ="backgroundCanvas" frameloop="demand" style={{position:"fixed"}}  camera={{ zoom: 10, position: [0, 20, 100] }}>
               
               <ambientLight intensity={0.1}></ambientLight>
               <pointLight intensity={0.4} color="#cc00cc"position={[10, 10, -10]} />

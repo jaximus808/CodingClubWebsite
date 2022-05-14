@@ -194,11 +194,11 @@ function MobileBack(props) {
 
 function ComputerBack(props) {
 
-  const [xPos,setXPos] = useState(0.008*window.innerWidth)
+  const [xPos,setXPos] = useState(0.005*window.innerWidth)
 
   const handleResize = () =>
   {
-    setXPos(0.008*window.innerWidth)
+    setXPos(0.005*window.innerWidth)
   }
 
   useEffect(() =>

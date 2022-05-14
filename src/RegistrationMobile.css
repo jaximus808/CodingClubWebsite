@@ -3,9 +3,8 @@
     display: grid;
     justify-content: space-evenly;
     grid-template-columns:repeat(20,5%);
-    grid-template-rows:repeat(62,10vw);
+    grid-template-rows:repeat(83,10vw);
     position:absolute;
-    top:80%;
     width:100%;
     text-align: center;
 }
@@ -16,8 +15,8 @@
     background-color: #143F6B;
     grid-column-start: 1;
     grid-column-end:21;
-    grid-row-start: 57;
-    grid-row-end: 64;
+    grid-row-start: 77;
+    grid-row-end: 84;
     padding: 1vw;
     float: right;
     font-family: 'Teko', sans-serif;
@@ -31,8 +30,8 @@
     background-color: rgba(255, 255, 255,0.9);
     grid-column-start: 2;
     grid-column-end:20;
-    grid-row-start: 1;
-    grid-row-end: 12;
+    grid-row-start: 18;
+    grid-row-end: 30;
     padding: 1vw;
     float: right;
     font-family: 'Teko', sans-serif;
@@ -44,8 +43,8 @@
     background-color: rgba(255, 255, 255,0.9);
     grid-column-start: 2;
     grid-column-end:20;
-    grid-row-start: 13;
-    grid-row-end: 52;
+    grid-row-start: 32;
+    grid-row-end: 71;
     padding: 1vw;
     float: right;
     font-family: 'Teko', sans-serif; 

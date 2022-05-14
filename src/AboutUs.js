@@ -4,6 +4,7 @@ import './AboutUs.css';
 
 import './AboutUsMobile.css';
 import Background from './Background';
+import LowPowerBack from './LowPowerBack';
 
 function Computer(props)
 {
@@ -13,6 +14,14 @@ function Computer(props)
     const headerElement = useRef(null);
     const fixedHeaderElement = useRef(null); 
 
+
+    const [lowPower, setLowPower] = useState(false)
+
+    const handleLowPower = () =>
+    {
+        localStorage.setItem("lowPower", !lowPower)
+        setLowPower(!lowPower)  
+    }
     const showFixed =() =>
     {
         fixedHeaderElement.current.style.top = "0";
@@ -43,7 +52,19 @@ function Computer(props)
     {
         window.addEventListener("scroll", handleScroll)
         
-        
+        const saved = localStorage.getItem("lowPower");
+        console.log(saved)
+        if(saved === undefined) 
+        {
+            localStorage.setItem("lowPower", false)
+            setLowPower(false)
+            console.log("??")
+        }
+        else
+        {
+            setLowPower(saved === "true")
+            console.log(lowPower)
+        }
 
         return () =>
         {
@@ -62,31 +83,36 @@ function Computer(props)
             @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Teko&display=swap');
             </style> 
             
-            <div style={{top:"25%"}} className='ClubTitle'>
-                The Coding Club
-                <div style={{fontSize:"4vw"}}>About Us</div>
-            </div>
-            <div ref={headerElement} className='links'>
-
-                <a href='/CodingClub/'>Home</a>
-                <a href="/CodingClub/AboutUs">About Us</a>
-                <a href="/CodingClub/Registration">Registration</a>
-                <a href="/CodingClub/Events">Events</a>
-                <a href="/CodingClub/Resources">Resources</a>
-            </div>
-
+            {(!lowPower) ?<LowPowerBack/> :<Background/>}
             <div ref={fixedHeaderElement} className='fixedLinks'>
 
-                <a href='/CodingClub/'>Home</a>
-                <a href="/CodingClub/AboutUs">About Us</a>
-                <a href="/CodingClub/Registration">Registration</a>
-                <a href="/CodingClub/Events">Events</a>
-                <a href="/CodingClub/Resources">Resources</a>
-            </div>
-
+                    <a href='/CodingClub/'>Home</a>
+                    <a href="/CodingClub/AboutUs">About Us</a>
+                    <a href="/CodingClub/Registration">Registration</a>
+                    <a href="/CodingClub/Events">Events</a>
+                    <a href="/CodingClub/Resources">Resources</a>
+                </div>
             
 
             <div className='containerAbout' style={{position:'absolute',color:"white"}}>
+                <div style={{top:"25%"}} className='ClubTitle'>
+                    The Coding Club
+                    <div style={{fontSize:"4vw"}}>About Us</div>
+                </div>
+
+                <div className='LowPowerMode'>
+                <div>Low Power Mode</div>
+                <button onClick={handleLowPower} className={`${(!lowPower) ? "LowPowerButtonOn": "LowPowerButton" }`}></button>
+            </div>
+                <div ref={headerElement} className='links'>
+
+                    <a href='/CodingClub/'>Home</a>
+                    <a href="/CodingClub/AboutUs">About Us</a>
+                    <a href="/CodingClub/Registration">Registration</a>
+                    <a href="/CodingClub/Events">Events</a>
+                    <a href="/CodingClub/Resources">Resources</a>
+                </div>
+
                 
                 <div className='WeDo'>
                     <div style={{"fontWeight":"bold", "fontSize":"3vw"} }>What we stand for</div>
@@ -194,16 +220,7 @@ function Mobile(props)
             @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Teko&display=swap');
             </style> 
             
-            <div style={{top:"25%"}} className='ClubTitleMobile'>
-            The Coding Club
-                <div style={{fontSize:"8vw"}}>About Us</div>
-            </div>
-            <div ref={headerElement} className='linksMobile'>
-                <a href="/CodingClub">Home</a>
-                <a href="/CodingClub/Registration">Registration</a>
-                <a href="/CodingClub/Events">Events</a>
-                <a href="/CodingClub/Resources">Resources</a>
-            </div>
+            
 
             <div ref={fixedHeaderElement} className='fixedLinksMobile'>
                 <a href='/CodingClub/'>Home</a>
@@ -216,7 +233,17 @@ function Mobile(props)
             
 
             <div className='containerAboutMobile' style={{position:'absolute',color:"white"}}>
-                
+            <div style={{top:"25%"}} className='ClubTitleMobile'>
+            The Coding Club
+                <div style={{fontSize:"8vw"}}>About Us</div>
+            </div>
+            <div ref={headerElement} className='linksMobile'>
+                <a href='/CodingClub/'>Home</a>
+                    <a href="/CodingClub/AboutUs">About Us</a>
+                    <a href="/CodingClub/Registration">Registration</a>
+                    <a href="/CodingClub/Events">Events</a>
+                    <a href="/CodingClub/Resources">Resources</a>
+            </div>
                 <div className='WeDoMobile'>
                     <div style={{"fontWeight":"bold", "fontSize":"7vw"} }>What We Stand For</div>
                     <div style={{"fontSize":"6vw"}}>Our club seeks to spark more creative and passionate students into the field of computer science. New members with no to little experience with programming will join the club with the goal of being able to program in a generic language. The language of choice new members will learn will be C++. Despite its difficulty relative to other languages, C++ will allow students to learn programming patterns such as common syntax, data structures, and type strict variable notation. This will allow a smoother transition to other languages and will create stronger habits when programming. Those who have an understanding of programming will practice for competitions such as but not limited to hackathons and algorithm competitions. Concepts outside of programming such as Networking will also be covered using Nodejs and C++ as its tools. </div>
@@ -269,7 +296,6 @@ export default function AboutUs(props)
 {
     return (
         <>
-        <Background/>
             {( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )? <Mobile/> :<Computer/>}
             
         </>

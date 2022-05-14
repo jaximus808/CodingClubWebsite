@@ -3,9 +3,8 @@
     display: grid;
     justify-content: space-evenly;
     grid-template-columns:repeat(20,5%);
-    grid-template-rows:repeat(60,10vw);
+    grid-template-rows:repeat(73,10vw);
     position:absolute;
-    top:100%;
     width:100%;
 }
 
@@ -15,8 +14,8 @@
     background-color: rgba(255, 255, 255,0.9);
     grid-column-start: 2;
     grid-column-end:20;
-    grid-row-start: 2;
-    grid-row-end: 53;
+    grid-row-start: 20;
+    grid-row-end: 65;
     padding: 1vw;
     float: right;
     font-family: 'Teko', sans-serif;
@@ -34,8 +33,8 @@
     background-color: #143F6B;
     grid-column-start: 1;
     grid-column-end:21;
-    grid-row-start: 55;
-    grid-row-end: 61;
+    grid-row-start: 67;
+    grid-row-end: 74;
     padding: 1vw;
     float: right;
     font-family: 'Teko', sans-serif;
