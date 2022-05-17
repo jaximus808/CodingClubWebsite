@@ -174,41 +174,35 @@
 }
 .LowPowerModeMobile
 {
+    background-color: #143F6B;
     position: fixed;
     right:1vw;
-    bottom:0.1vw;
+    bottom:1vw;
+    padding: 1vw;
     text-align: center;
     z-index: 100;
-    font-size: 5vw;
+    font-size: 2vh;
     font-family: 'Teko', sans-serif;
+    border-radius: 2vw;
 }
 .LowPowerButtonMobile
 {
     border: white 0.2vw solid;
-    width: 10vw;
-    height: 10vw;
+    width: 5vh;
+    height: 5vh;
    
     border-radius: 100%;
     background-color: rgba(0,0,0,0);
 }
-.LowPowerButtonMobile:hover
-{
-    cursor: pointer;
-    background-color: rgba(255,255,255,0.5);
-}
+
 
 .LowPowerButtonOnMobile
 {
     border: white 0.2vw solid;
-    width: 10vw;
-    height: 10vw;
-   
+    width: 5vh;
+    height: 5vh;
+    
     border-radius: 100%;
     background-color: rgba(255,255,255,0.95);
 }
 
-.LowPowerButtonOnMobile:hover
-{
-    cursor: pointer;
-    background-color: rgba(255,255,255,0.5);
-}

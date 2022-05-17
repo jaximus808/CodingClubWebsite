@@ -247,7 +247,7 @@ function Computer(props)
 
 
                 <div className='BottomBaseEvent'>
-                    <div style={{"fontSize":"1.3vw"}}>This Website was made by Jaxon Poentis, the President of The Coding Club, and is powered by React and Expressjs using Nodejs as the runtime enviornment. All <a style={{color:"white"}} target="_blank" href='https://github.com/jaximus808/CodingClubWebsite'>Source Code</a>, exclduing modules, are written entirely by Jaxon Poentis. Any similarities in design are purely coincidental. Any information or images of members and officers are used with consent. Information about this can be found more in our resources page. </div>
+                    <div style={{"fontSize":"1.3vw"}}>This Website was made by Jaxon Poentis, the President of The Coding Club, and is powered by React and Expressjs using Nodejs as the runtime enviornment. All <a style={{color:"white"}} target="_blank" href='https://github.com/jaximus808/CodingClubWebsite'>Source Code</a>, excluding modules, are written entirely by Jaxon Poentis. Any similarities in design are purely coincidental. Any information or images of members and officers are used with consent. Information about this can be found more in our resources page. </div>
                     <img style={{"width":"4.5vw","height":"4.5vw"}} src='./codingClubLogo.png'></img>
                 </div>
             </div>
@@ -271,6 +271,15 @@ function Mobile(props)
     const [page, setPage] = useState(0)
     const [atEnd, setEnd] = useState(false)
 
+
+
+    const [lowPower, setLowPower] = useState(false)
+    const handleLowPower = () =>
+    {
+        localStorage.setItem("lowPower", !lowPower)
+        console.log(localStorage.getItem("lowPower"))
+        setLowPower(!lowPower)
+    }
     const showFixed =() =>
     {
         fixedHeaderElement.current.style.top = "0";
@@ -348,6 +357,20 @@ function Mobile(props)
     useEffect(() => 
     {
         window.addEventListener("scroll", handleScroll)
+        const saved = localStorage.getItem("lowPower");
+        console.log(saved)
+        if(saved === undefined) 
+        {
+            localStorage.setItem("lowPower", false)
+            setLowPower(false)
+            console.log("??")
+        }
+        else
+        {
+            setLowPower(saved === "true")
+            console.log(lowPower)
+        }
+
         
         fetch(`${window.location.protocol}//${window.location.host}/api/getEvents`, {
             method:"POST",
@@ -394,6 +417,7 @@ function Mobile(props)
 
     return(
         <>
+        {(!lowPower) ?<LowPowerBack/> :<Background/>}
             <style>
                 @import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
             </style> 
@@ -417,6 +441,10 @@ function Mobile(props)
                     The Coding Club
                     <div style={{fontSize:"8vw"}}>Events</div>
                 </div>
+                <div className='LowPowerModeMobile'>
+                <div>Low Power Mode</div>
+                <button onClick={handleLowPower} className={`${(!lowPower) ? "LowPowerButtonOnMobile": "LowPowerButtonMobile" }`}></button>
+            </div>
                 <div ref={headerElement} className='linksMobile'>
                 <a href='/CodingClub/'>Home</a>
                     <a href="/CodingClub/AboutUs">About Us</a>
@@ -472,7 +500,7 @@ function Mobile(props)
 
 
                 <div className='BottomBaseEventMobile'>
-                    <div style={{"fontSize":"4vw"}}>This Website was made by Jaxon Poentis, the President of The Coding Club, and is powered by React and Expressjs using Nodejs as the runtime enviornment. All <a style={{color:"white"}} target="_blank" href='https://github.com/jaximus808/CodingClubWebsite'>Source Code</a>, exclduing modules, are written entirely by the President of this club. Any similarities in design are purely coincidental. Any information or images of members and officers are used with consent. Information about this can be found more in our resources page. </div>
+                    <div style={{"fontSize":"4vw"}}>This Website was made by Jaxon Poentis, the President of The Coding Club, and is powered by React and Expressjs using Nodejs as the runtime enviornment. All <a style={{color:"white"}} target="_blank" href='https://github.com/jaximus808/CodingClubWebsite'>Source Code</a>, excluding modules, are written entirely by the President of this club. Any similarities in design are purely coincidental. Any information or images of members and officers are used with consent. Information about this can be found more in our resources page. </div>
                     <img style={{"width":"20vw","height":"20vw"}} src='./codingClubLogo.png'></img>
                 </div>
             </div>

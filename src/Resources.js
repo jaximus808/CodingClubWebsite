@@ -112,7 +112,7 @@ function Computer(props)
                     <a href="/CodingClub/Resources">Resources</a>
                 </div>
                 <div className='FormLinks'>
-                    <div style={{"fontWeight":"bold", "textAlign":"center","fontSize":"3.5vw"}}>Forms and Documents</div>   
+                    <div style={{"fontWeight":"bold", "textAlign":"center","fontSize":"3.5vw"}}>Forms and Documents {"(Under Construction)"}</div>   
                     <div style={{"textAlign":"center"}}>
                         <ul style={{"fontSize":"2.5vw"}}>
                             <li style={{"marginBottom":"2vw"}}><a style={{"fontWeight":"bold", "textAlign":"center"}}target={"_blank"} href={`${window.location.protocol}//${window.location.host}/api/forms/constitution`}>Constitution</a></li>
@@ -122,7 +122,7 @@ function Computer(props)
                     </div>
                 </div>
                 <div className='BottomBaseResources'>
-                    <div style={{"fontSize":"1.3vw"}}>This Website was made by Jaxon Poentis, the President of The Coding Club, and is powered by React and Expressjs using Nodejs as the runtime enviornment. All <a style={{color:"white"}} target="_blank" href='https://github.com/jaximus808/CodingClubWebsite'>Source Code</a>, exclduing modules, are written entirely by Jaxon Poentis. Any similarities in design are purely coincidental. Any information or images of members and officers are used with consent. Information about this can be found more in our resources page. </div>
+                    <div style={{"fontSize":"1.3vw"}}>This Website was made by Jaxon Poentis, the President of The Coding Club, and is powered by React and Expressjs using Nodejs as the runtime enviornment. All <a style={{color:"white"}} target="_blank" href='https://github.com/jaximus808/CodingClubWebsite'>Source Code</a>, excluding modules, are written entirely by Jaxon Poentis. Any similarities in design are purely coincidental. Any information or images of members and officers are used with consent. Information about this can be found more in our resources page. </div>
                     <img style={{"width":"5vw","height":"5vw"}} src='./codingClubLogo.png'></img>
                 </div>
                
@@ -140,7 +140,14 @@ function Mobile(props)
     const moved = useRef(false)
     const headerElement = useRef(null);
     const fixedHeaderElement = useRef(null); 
-
+    
+    const [lowPower, setLowPower] = useState(false)
+    const handleLowPower = () =>
+    {
+        localStorage.setItem("lowPower", !lowPower)
+        console.log(localStorage.getItem("lowPower"))
+        setLowPower(!lowPower)
+    }
     const showFixed =() =>
     {
         fixedHeaderElement.current.style.top = "0";
@@ -170,7 +177,19 @@ function Mobile(props)
     useEffect(() => 
     {
         window.addEventListener("scroll", handleScroll)
-        
+        const saved = localStorage.getItem("lowPower");
+        console.log(saved)
+        if(saved === undefined) 
+        {
+            localStorage.setItem("lowPower", false)
+            setLowPower(false)
+            console.log("??")
+        }
+        else
+        {
+            setLowPower(saved === "true")
+            console.log(lowPower)
+        }
         
 
         return () =>
@@ -189,6 +208,7 @@ function Mobile(props)
             <style>
             @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Teko&display=swap');
             </style> 
+            {(lowPower) ? <Background/>:<LowPowerBack/>}
            
             <div ref={fixedHeaderElement} className='fixedLinksMobile'>
                 <a href='/CodingClub/'>Home</a>
@@ -205,6 +225,10 @@ function Mobile(props)
                     The Coding Club
                     <div style={{fontSize:"8vw"}}>Resources</div>
                 </div>
+                <div className='LowPowerModeMobile'>
+                <div>Low Power Mode</div>
+                <button onClick={handleLowPower} className={`${(!lowPower) ? "LowPowerButtonOnMobile": "LowPowerButtonMobile" }`}></button>
+            </div>
                 <div ref={headerElement} className='linksMobile'>
                     <a href='/CodingClub/'>Home</a>
                     <a href="/CodingClub/AboutUs">About Us</a>
@@ -213,7 +237,7 @@ function Mobile(props)
                     <a href="/CodingClub/Resources">Resources</a>
                 </div>
                 <div className='FormLinksMobile'>
-                    <div style={{"fontWeight":"bold", "textAlign":"center","fontSize":"8vw"}}>Forms and Documents</div>   
+                    <div style={{"fontWeight":"bold", "textAlign":"center","fontSize":"8vw"}}>Forms and Documents {"(WIP)"}</div>   
                     <div style={{"textAlign":"center"}}>
                         <div style={{"fontSize":"7vw","marginTop":"5vw"}}>
                             <div style={{"marginBottom":"5vw"}}><a style={{"fontWeight":"bold", "textAlign":"center"}}target={"_blank"} href={`${window.location.protocol}//${window.location.host}/api/forms/constitution`}>Constitution</a></div>
@@ -223,7 +247,7 @@ function Mobile(props)
                     </div>
                 </div>
                 <div className='BottomBaseResourcesMobile'>
-                    <div style={{"fontSize":"4vw"}}>This Website was made by Jaxon Poentis, the President of The Coding Club, and is powered by React and Expressjs using Nodejs as the runtime enviornment. All <a style={{color:"white"}} target="_blank" href='https://github.com/jaximus808/CodingClubWebsite'>Source Code</a>, exclduing modules, are written entirely by Jaxon Poentis. Any similarities in design are purely coincidental. Any information or images of members and officers are used with consent. Information about this can be found more in our resources page. </div>
+                    <div style={{"fontSize":"4vw"}}>This Website was made by Jaxon Poentis, the President of The Coding Club, and is powered by React and Expressjs using Nodejs as the runtime enviornment. All <a style={{color:"white"}} target="_blank" href='https://github.com/jaximus808/CodingClubWebsite'>Source Code</a>, excluding modules, are written entirely by Jaxon Poentis. Any similarities in design are purely coincidental. Any information or images of members and officers are used with consent. Information about this can be found more in our resources page. </div>
                     <img style={{"width":"20vw","height":"20vw"}} src='./codingClubLogo.png'></img>
                 </div>
                

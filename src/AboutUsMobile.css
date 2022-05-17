@@ -4,8 +4,8 @@
     background-color: rgba(255, 255, 255,0.9);
     grid-column-start: 2;
     grid-column-end:20;
-    grid-row-start: 114;
-    grid-row-end: 135;
+    grid-row-start: 134;
+    grid-row-end: 155;
     padding: 1vw;
     float: right;
     font-family: 'Teko', sans-serif;
@@ -17,7 +17,7 @@
     display: grid;
     justify-content: space-evenly;
     grid-template-columns:repeat(20,5%);
-    grid-template-rows:repeat(140,10vw);
+    grid-template-rows:repeat(156,10vw);
     position:absolute;
     width:100%;
 }
@@ -29,7 +29,7 @@
     grid-column-start: 2;
     grid-column-end:20;
     grid-row-start: 20;
-    grid-row-end:112;
+    grid-row-end:132;
     padding: 1vw;
     float: right;
     font-family: 'Teko', sans-serif;
@@ -41,7 +41,7 @@
     display: grid;
     justify-content: space-evenly;
     grid-template-columns:repeat(20,5%);
-    grid-template-rows:repeat(200,5vw);
+    grid-template-rows:repeat(250,5vw);
 }
 
 .presidentMobile
@@ -71,7 +71,7 @@
     font-family: 'Teko', sans-serif;
 
 }
-.secretaryMobile
+.coVicePresidentMobile
 {
     color:black;
     background-color: #f0f0f0;
@@ -79,6 +79,18 @@
     grid-column-end:20;
     grid-row-start: 68;
     grid-row-end: 103;
+    padding: 1vw;
+    float: right;
+    font-family: 'Teko', sans-serif;
+}
+.secretaryMobile
+{
+    color:black;
+    background-color: #f0f0f0;
+    grid-column-start: 2;
+    grid-column-end:20;
+    grid-row-start: 105;
+    grid-row-end: 140;
     padding: 1vw;
     float: right;
     font-family: 'Teko', sans-serif;
@@ -91,8 +103,8 @@
     background-color: #f0f0f0;
     grid-column-start:2 ;
     grid-column-end:20;
-    grid-row-start: 105;
-    grid-row-end: 140;
+    grid-row-start: 142;
+    grid-row-end: 177;
     padding: 1vw;
     float: right;
     font-family: 'Teko', sans-serif;
@@ -105,8 +117,21 @@
     background-color: #f0f0f0;
     grid-column-start:2 ;
     grid-column-end:20;
-    grid-row-start: 142;
-    grid-row-end: 177;
+    grid-row-start: 178;
+    grid-row-end: 205;
+    padding: 1vw;
+    float: right;
+    font-family: 'Teko', sans-serif;
+}
+
+.socialAddMobile
+{
+    color:black;
+    background-color: #f0f0f0;
+    grid-column-start:2 ;
+    grid-column-end:20;
+    grid-row-start: 207;
+    grid-row-end: 220;
     padding: 1vw;
     float: right;
     font-family: 'Teko', sans-serif;

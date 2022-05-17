@@ -4,8 +4,8 @@
     background-color: rgba(255, 255, 255,0.9);
     grid-column-start: 2;
     grid-column-end:20;
-    grid-row-start: 19;
-    grid-row-end: 22;
+    grid-row-start: 21;
+    grid-row-end: 24;
     padding: 1vw;
     float: right;
     font-family: 'Teko', sans-serif;
@@ -17,7 +17,7 @@
     display: grid;
     justify-content: space-evenly;
     grid-template-columns:repeat(20,5%);
-    grid-template-rows:repeat(23,10vw);
+    grid-template-rows:repeat(25,10vw);
     position:absolute;
     width:100%;
 }
@@ -29,7 +29,7 @@
     grid-column-start: 2;
     grid-column-end:20;
     grid-row-start: 7;
-    grid-row-end: 18;
+    grid-row-end: 20;
     padding: 1vw;
     float: right;
     font-family: 'Teko', sans-serif;
@@ -38,10 +38,11 @@
 
 .officerContainers
 {
+    padding-top: 1vw;
     display: grid;
     justify-content: space-evenly;
     grid-template-columns:repeat(20,5%);
-    grid-template-rows:repeat(20,5vw);
+    grid-template-rows:repeat(30,5vw);
 }
 
 .president
@@ -51,13 +52,25 @@
     grid-column-start: 5;
     grid-column-end:17;
     grid-row-start: 1;
-    grid-row-end: 9;
+    grid-row-end: 10;
     padding: 1vw;
     float: right;
     font-family: 'Teko', sans-serif;
     text-align: center;
 }
-
+.coVicePresident
+{
+    color:black;
+    background-color: #f0f0f0;
+    grid-column-start:11;
+    grid-column-end:21;
+    grid-row-start: 10;
+    grid-row-end: 15;
+    padding: 1vw;
+    float: right;
+    font-family: 'Teko', sans-serif;
+   
+}
 .vicePresident
 {
     color:black;
@@ -75,10 +88,10 @@
 {
     color:black;
     background-color: #f0f0f0;
-    grid-column-start: 11;
-    grid-column-end:21;
-    grid-row-start: 10;
-    grid-row-end: 15;
+    grid-column-start: 1;
+    grid-column-end:11;
+    grid-row-start: 15;
+    grid-row-end: 20;
     padding: 1vw;
     float: right;
     font-family: 'Teko', sans-serif;
@@ -89,8 +102,8 @@
 {
     color:black;
     background-color: #f0f0f0;
-    grid-column-start:1 ;
-    grid-column-end:11;
+    grid-column-start:11 ;
+    grid-column-end:21;
     grid-row-start: 15;
     grid-row-end: 20;
     padding: 1vw;
@@ -103,11 +116,38 @@
 {
     color:black;
     background-color: #f0f0f0;
-    grid-column-start:11 ;
-    grid-column-end:21;
-    grid-row-start: 15;
-    grid-row-end: 20;
+    grid-column-start:1 ;
+    grid-column-end:11;
+    grid-row-start: 20;
+    grid-row-end: 25;
     padding: 1vw;
     float: right;
     font-family: 'Teko', sans-serif;
+}
+
+.socialAdd
+{
+    color:black;
+    background-color: #f0f0f0;
+    grid-column-start:11 ;
+    grid-column-end:21;
+    grid-row-start: 20;
+    grid-row-end: 25;
+    padding: 1vw;
+    float: right;
+    font-family: 'Teko', sans-serif;
+}
+
+.BottomBaseAbout
+{
+    color:white;
+    background-color: #143F6B;
+    grid-column-start: 1;
+    grid-column-end:21;
+    grid-row-start: 25;
+    grid-row-end: 26;
+    padding: 1vw;
+    float: right;
+    font-family: 'Teko', sans-serif;
+    text-align: center; 
 }

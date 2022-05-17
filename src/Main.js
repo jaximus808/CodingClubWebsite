@@ -232,7 +232,7 @@ function Computer(props)
                 </div>
 
                 <div className='BottomBase'>
-                    <div style={{"fontSize":"1.3vw"}}>This Website was made by Jaxon Poentis, the President of the Coding Club, and is powered by React and Expressjs using Nodejs as the runtime enviornment. All <a style={{color:"white"}} target="_blank" href='https://github.com/jaximus808/CodingClubWebsite'>Source Code</a>, exclduing modules, are written entirely by Jaxon Poentis. Any similarities in design are purely coincidental. Any information or images of members and officers are used with consent. Information about this can be found more in our resources page. </div>
+                    <div style={{"fontSize":"1.3vw"}}>This Website was made by Jaxon Poentis, the President of the Coding Club, and is powered by React and Expressjs using Nodejs as the runtime enviornment. All <a style={{color:"white"}} target="_blank" href='https://github.com/jaximus808/CodingClubWebsite'>Source Code</a>, excluding modules, are written entirely by Jaxon Poentis. Any similarities in design are purely coincidental. Any information or images of members and officers are used with consent. Information about this can be found more in our resources page. </div>
                     <img style={{"width":"4.5vw","height":"4.5vw"}} src='./codingClubLogo.png'></img>
                 </div>
             </div>
@@ -355,8 +355,8 @@ function Mobile(props)
     return(
         <>
         
-            {(!lowPower) ?<LowPowerBack/>:<Background/>}    
-            <style>
+            <>{(!lowPower) ?<LowPowerBack/>:<Background/>}</>
+             <style>
                 @import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
             </style> 
             <style>
@@ -464,7 +464,7 @@ function Mobile(props)
                 </div>
 
                 <div className='BottomBaseMobile'>
-                    <div style={{"fontSize":"4vw"}}>This Website was made by Jaxon Poentis, the Jaxon Poentis, and is powered by React and Expressjs using Nodejs as the runtime enviornment. All <a style={{color:"white"}} target="_blank" href='https://github.com/jaximus808/CodingClubWebsite'>Source Code</a>, exclduing modules, are written entirely by the President of this club. Any similarities in design are purely coincidental. Any information or images of members and officers are used with consent. Information about this can be found more in our resources page. </div>
+                    <div style={{"fontSize":"4vw"}}>This Website was made by Jaxon Poentis, the Jaxon Poentis, and is powered by React and Expressjs using Nodejs as the runtime enviornment. All <a style={{color:"white"}} target="_blank" href='https://github.com/jaximus808/CodingClubWebsite'>Source Code</a>, excluding modules, are written entirely by the President of this club. Any similarities in design are purely coincidental. Any information or images of members and officers are used with consent. Information about this can be found more in our resources page. </div>
                     <img style={{"width":"20vw","height":"20vw"}} src='./codingClubLogo.png'></img>
                 </div>
             </div>
