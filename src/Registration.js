@@ -86,11 +86,11 @@ function Computer(props)
             
            
             <div ref={fixedHeaderElement} className='fixedLinks'>
-                <a href='/CodingClub/'>Home</a>
-                <a href="/CodingClub/AboutUs">About Us</a>
-                <a href="/CodingClub/Registration">Registration</a>
-                <a href="/CodingClub/Events">Events</a>
-                <a href="/CodingClub/Resources">Resources</a>
+                <a href='/'>Home</a>
+                <a href="/AboutUs">About Us</a>
+                <a href="/Registration">Registration</a>
+                <a href="/Events">Events</a>
+                <a href="/Resources">Resources</a>
             </div>
 
             
@@ -105,11 +105,11 @@ function Computer(props)
                 <button onClick={handleLowPower} className={`${(!lowPower) ? "LowPowerButtonOn": "LowPowerButton" }`}></button>
             </div>
             <div ref={headerElement} className='links'>
-                <a href='/CodingClub/'>Home</a>
-                <a href="/CodingClub/AboutUs">About Us</a>
-                <a href="/CodingClub/Registration">Registration</a>
-                <a href="/CodingClub/Events">Events</a>
-                <a href="/CodingClub/Resources">Resources</a>
+                <a href='/'>Home</a>
+                <a href="/AboutUs">About Us</a>
+                <a href="/Registration">Registration</a>
+                <a href="/Events">Events</a>
+                <a href="/Resources">Resources</a>
             </div>
 
                <div className='HowtoJoin'>
@@ -235,11 +235,11 @@ function Mobile(props)
            
 
             <div ref={fixedHeaderElement} className='fixedLinksMobile'>
-                <a href='/CodingClub/'>Home</a>
-                <a href="/CodingClub/AboutUs">About Us</a>
-                <a href="/CodingClub/Registration">Registration</a>
-                <a href="/CodingClub/Events">Events</a>
-                <a href="/CodingClub/Resources">Resources</a>
+                <a href='/'>Home</a>
+                <a href="/AboutUs">About Us</a>
+                <a href="/Registration">Registration</a>
+                <a href="/Events">Events</a>
+                <a href="/Resources">Resources</a>
             </div>
 
             
@@ -254,11 +254,11 @@ function Mobile(props)
                 <button onClick={handleLowPower} className={`${(!lowPower) ? "LowPowerButtonOnMobile": "LowPowerButtonMobile" }`}></button>
             </div>
             <div ref={headerElement} className='linksMobile'>
-                <a href='/CodingClub/'>Home</a>
-                <a href="/CodingClub/AboutUs">About Us</a>
-                <a href="/CodingClub/Registration">Registration</a>
-                <a href="/CodingClub/Events">Events</a>
-                <a href="/CodingClub/Resources">Resources</a>
+                <a href='/'>Home</a>
+                <a href="/AboutUs">About Us</a>
+                <a href="/Registration">Registration</a>
+                <a href="/Events">Events</a>
+                <a href="/Resources">Resources</a>
             </div>
                <div className='HowtoJoinMobile'>
                     <div style={{"fontWeight":"bold", "fontSize":"7vw", "textAlign":'center'} }>How do I Join?</div>

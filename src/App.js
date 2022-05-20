@@ -20,14 +20,12 @@ import {
 function RouteWrapper()
 {
   let routes = useRoutes([
-    {path:"/", element:<Opening/>},
-    {path:"/CodingClub", element:<Main/>},
-    {path:"/CodingClub/Info", element:<Info/>},
-    {path:"/CodingClub/AboutUs", element:<AboutUs/>},
-    {path:"/CodingClub/Registration", element:<Registration/>},
-    {path:"/CodingClub/Events", element:<Events/>},
-    {path:"/CodingClub/Resources", element:<Resources/>},
-    {path:"/RoboticsClub", element:<RoboticsMain/>}
+    {path:"/", element:<Main/>},
+    {path:"/Info", element:<Info/>},
+    {path:"/AboutUs", element:<AboutUs/>},
+    {path:"/Registration", element:<Registration/>},
+    {path:"/Events", element:<Events/>},
+    {path:"/Resources", element:<Resources/>},
 
   ])
   return routes; 
