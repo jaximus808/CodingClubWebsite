@@ -123,7 +123,7 @@ function Computer(props)
     return(
         <>
 
-            <>{(!lowPower) ?<LowPowerBack/>:<Background/>}</>
+            <>{(lowPower) ?<LowPowerBack/>:<Background/>}</>
             <style>
                 @import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
             </style> 
@@ -142,7 +142,7 @@ function Computer(props)
             </div>
             <div className='LowPowerMode'>
                 <div>Low Power Mode</div>
-                <button onClick={handleLowPower} className={`${(!lowPower) ? "LowPowerButtonOn": "LowPowerButton" }`}></button>
+                <button onClick={handleLowPower} className={`${(lowPower) ? "LowPowerButtonOn": "LowPowerButton" }`}></button>
             </div>
             <div ref={headerElement} className='links'>
 
@@ -355,7 +355,7 @@ function Mobile(props)
     return(
         <>
         
-            <>{(!lowPower) ?<LowPowerBack/>:<Background/>}</>
+            <>{(lowPower) ?<LowPowerBack/>:<Background/>}</>
              <style>
                 @import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
             </style> 
@@ -367,7 +367,7 @@ function Mobile(props)
             <div className='containerMobile' style={{position:'absolute',color:"white"}}>
             <div className='LowPowerModeMobile'>
                 <div>Low Power Mode</div>
-                <button onClick={handleLowPower} className={`${(!lowPower) ? "LowPowerButtonOnMobile": "LowPowerButtonMobile" }`}></button>
+                <button onClick={handleLowPower} className={`${(lowPower) ? "LowPowerButtonOnMobile": "LowPowerButtonMobile" }`}></button>
             </div>
             <div  className='ClubTitleMobile'>
                 The Coding Club
