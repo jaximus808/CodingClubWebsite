@@ -89,7 +89,7 @@ router.get("/getRecentEvent/", async (req, res) =>
         });
         const recentEvent = events[0];
         //console.log(events)
-        res.send({error:false, name:recentEvent.Name, description:recentEvent.Description, imageLink:recentEvent.ImageLink, eventDate:recentEvent.EventDate  })
+        res.send({error:false, _id: recentEvent._id ,name:recentEvent.Name, description:recentEvent.Description, imageLink:recentEvent.ImageLink, eventDate:recentEvent.EventDate  })
     }
     catch(e)
     {

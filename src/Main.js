@@ -25,6 +25,8 @@ function Computer(props)
 
     const [lowPower, setLowPower] = useState(false)
 
+    const [apiLink, setApiLink ] = useState("");
+
     const handleLowPower = () =>
     {
         localStorage.setItem("lowPower", !lowPower)
@@ -100,6 +102,7 @@ function Computer(props)
                 setDay(date.getDate())
                 setMonth(date.getMonth())
                 setYear(date.getFullYear())
+                setApiLink(`/api/event/${data._id}`)
                 load(true)
 
             });
@@ -224,7 +227,7 @@ function Computer(props)
                     :
                         <div >
                             <img style={{"width":"12vw", "height":"12vw"}} src={image}></img>
-                            <div style={{"fontSize":"3vw","textDecoration":"underline"}}>{name}</div>
+                            <a style={{color:"black"}} href={apiLink}><div style={{"fontSize":"3vw"}}>{name}</div></a>
                             <div style={{"fontSize":"2vw"}}>Event Date: {month}/{day}/{year}</div>
                             <div className='descriptionEventMain' style={{"fontSize":"2vw"}}>Description: {description}</div>
                         </div>
@@ -260,6 +263,8 @@ function Mobile(props)
 
     const [lowPower, setLowPower] = useState(false)
 
+
+    const [apiLink, setApiLink ] = useState("");
 
     const handleLowPower = () =>
     {
@@ -332,6 +337,8 @@ function Mobile(props)
                 setDay(date.getDate())
                 setMonth(date.getMonth())
                 setYear(date.getFullYear())
+
+                setApiLink(`/api/event/${data._id}`)
                 load(true)
 
             });
@@ -456,7 +463,7 @@ function Mobile(props)
                     :
                         <div>
                             <img style={{"width":"30vw", "height":"30vw"}} src={image}></img>
-                            <div style={{"fontSize":"8vw","textDecoration":"underline"}}>{name}</div>
+                            <a style={{color:"black"}} href={apiLink}><div style={{"fontSize":"8vw"}}>{name}</div></a>
                             <div style={{"fontSize":"7vw"}}>Event Date: {month}/{day}/{year}</div>
                             <div className='descriptionEventMain' style={{"overflow":"clip", "fontSize":"7vw"}}>Description: {description}</div>
                         </div>
