@@ -29,5 +29,6 @@ app.use("/AboutUs",express.static(path.join(__dirname,"..","build")))
 app.use("/Registration",express.static(path.join(__dirname,"..","build")))
 app.use("/Events",express.static(path.join(__dirname,"..","build")))
 
+app.use("/api/event/:id",express.static(path.join(__dirname,"..","build")) )
 
 app.listen(process.env.PORT || 3000, () =>console.log("Server up"))

@@ -7,8 +7,7 @@ import AboutUs from "./AboutUs"
 import Registration from "./Registration"
 import Events from './Events';
 import Resources from './Resources';
-import Opening from './Opening';
-import RoboticsMain from "./RoboticsMain"
+import EventInfo from "./EventInfo"
 import {
   BrowserRouter as Router,
   Routes,
@@ -26,6 +25,7 @@ function RouteWrapper()
     {path:"/Registration", element:<Registration/>},
     {path:"/Events", element:<Events/>},
     {path:"/Resources", element:<Resources/>},
+    {path:"/api/event/:id", element:<EventInfo/>}
 
   ])
   return routes; 

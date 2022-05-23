@@ -3,6 +3,21 @@ const router = require("express").Router();
 const Event = require("../Models/Events");
 const middleAuth = require("./middleAuth")
 
+router.post("/removeEvent", middleAuth, async(req, res) =>
+{
+    try
+    {
+        const deleted = await Event.deleteOne({_id: req.body._id})
+        if(!deleted) return res.send({error:true, message:"event does not exist."})
+        
+        res.send({error:false, message:`${req._id} deleted successfully`})
+    }
+    catch
+    { 
+        res.send({error: true, message:"something went wrong"})
+    }
+})
+
 router.post("/createEvents/", middleAuth , async (req, res) =>
 {
     try
@@ -22,6 +37,24 @@ router.post("/createEvents/", middleAuth , async (req, res) =>
     catch
     {
         res.send({error:true, message:"something went wrong" });
+    }
+
+}) 
+
+router.post("/getEvent/" , async (req, res) =>
+{
+    
+    try
+    {
+        const fetchEvent = await Event.findById(req.body._id)
+
+        if(!fetchEvent) return res.send(res.send({error:true, message:"event does not exist" }))
+       
+        res.send({error:false, message:fetchEvent.toJSON()} )
+    }
+    catch
+    {
+        console.log("LOL?")
     }
 
 }) 

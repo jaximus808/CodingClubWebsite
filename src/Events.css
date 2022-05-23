@@ -30,7 +30,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
 .BottomBaseEvent
 {
     color:white;
@@ -57,4 +56,90 @@
 {
     color: rgba(0, 153, 255,0.5);
     cursor: pointer;
+}
+
+.SingularEventDisplay
+{
+    position:absolute;
+    top:10vw;
+    left:50%;
+    transform: translate(-50%,0%);
+    padding: 1vw;
+    font-family: 'Teko', sans-serif;
+    background-color: rgba(255, 255, 255,0.9);
+    width: 80%;
+    padding-bottom: 10vw;
+    margin-bottom: 20vw;
+}
+
+.BottomBaseEventSingular
+{
+    color:white;
+    background-color: #143F6B;
+    position:fixed;
+    bottom: 0;
+    padding: 1vw;
+    float: right;
+    font-family: 'Teko', sans-serif;
+    text-align: center; 
+}
+.EventfixedLinks
+{
+    position: fixed;
+    left:50%;
+    transform: translate(-50%, 0);
+    font-size: 2.5vw;
+    width:50%;
+    text-align: center;
+    font-family: 'Teko', sans-serif;
+    z-index:5;
+    transition: 1s;
+    width: 100%;
+    height: 4vw;
+    background-color: #143F6B;
+    z-index:100;
+}
+
+.EventfixedLinks > a
+{
+    margin-left: 2vw;
+    color:#00b3fe;
+}
+
+
+.EventfixedLinksMobile
+{
+    position: fixed;
+    left:50%;
+    transform: translate(-50%, 0);
+    font-size: 6vw;
+    width:50%;
+    text-align: center;
+    font-family: 'Teko', sans-serif;
+    z-index:20;
+    transition: 1s;
+    width: 100%;
+    height: 10vw;
+    background-color: #143F6B;
+
+  
+}
+.EventfixedLinksMobile > a
+{
+    margin-left: 2vw;
+    color:#00b3fe;
+}
+
+.SingularEventDisplayMobile
+{
+    position:absolute;
+    top:20vw;
+    left:50%;
+    transform: translate(-50%,0%);
+    padding: 1vw;
+    font-family: 'Teko', sans-serif;
+    background-color: rgba(255, 255, 255,0.9);
+    width: 80%;
+    padding-bottom: 10vw;
+    margin-bottom: 20vw;
 }

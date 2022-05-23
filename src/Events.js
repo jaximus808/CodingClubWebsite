@@ -186,7 +186,7 @@ function Computer(props)
             <div className='containerEvents' style={{position:'absolute',color:"white"}}>
                 
                 <div style={{top:"25%"}} className='ClubTitle'>
-                    Coding Club
+                    The Coding Club
                     <div style={{fontSize:"4vw"}}>Events</div>
                 </div>
                 <div className='LowPowerMode'>
